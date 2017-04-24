@@ -1,0 +1,119 @@
+<div>
+<!-- selective navigation bar-->
+<div class="navigation-window">
+    <div class="navigation-header">
+        <center><b>RAG STATUS</b><br>STAGE WISE</center>
+    </div>
+    <ul>
+        <li>
+            <div class="navigation-option">
+                <a href="" ng-click="setbuttonId(1)">
+                    <div class="option-logo">
+                        
+                    </div>
+                    <div class="option-name">
+                       <div class="text-nav">
+                         <b>RESPONSE</b><br>Rate   
+                       </div>
+                        
+                    </div>
+                    <div class="option-design">
+                        <b> > </b>   
+                    </div>
+                </a>
+            </div>
+        </li>
+        <hr>
+        <li>
+            <div class="navigation-option">
+                <a href="" ng-click="setbuttonId(2)">
+                    <div class="option-logo">
+                        
+                    </div>
+                        <div class="option-name" ng-click="setbuttonId(2)">
+                        <div class="text-nav">
+                        <b>Stage</b> <br>Rag Status
+                        </div>
+                    </div>
+                    <div class="option-design">
+                        >
+                    </div>
+                </a>
+            </div>
+        </li>
+        <hr>
+        <li>
+            <div class="navigation-option">
+                <a href="" ng-click="setbuttonId(3)">
+                    <div class="option-logo">
+
+                    </div>
+                    <div class="option-name" ng-click="setbuttonId(3)">
+                        <div class="text-nav">
+                        <b>StakeHolder</b><br>Rag Status
+                        </div>
+                    </div>
+                    <div class="option-design">
+                        >
+                    </div>
+                </a>
+            </div>
+        </li>
+        <hr>
+        <li>
+            <div class="navigation-option">
+                <a href="" ng-click="setbuttonId(4)">
+                    <div class="option-logo">
+                       
+                    </div>
+                    <div class="option-name" ng-click="setbuttonId(4)">
+                        <div class="text-nav">
+                        <b>BAND</b> <br> Rag Status
+                        </div>
+                    </div>
+                    <div class="option-design">
+                        >
+                    </div>
+                </a>
+            </div>
+        </li>
+        <hr>
+        <li>
+            <div class="navigation-option">
+                <a href="" ng-click="setbuttonId(5)">
+                    <div class="option-logo">
+                       
+                    </div>
+                    <div class="option-name" ng-click="setbuttonId(5)">
+                        <div class="text-nav">
+                        <b>% of RAG</b> <br> Red/Green/Amber
+                        </div>
+                    </div>
+                    <div class="option-design">
+                        >
+                    </div>
+                </a>
+            </div>
+        </li>
+    </ul>
+</div>
+<div>
+    <div ng-if="value === 1">
+        <response-page></response-page>
+    </div>
+    <div ng-if="value === 2">
+        <stage-wise></stage-wise>
+    </div>
+    <div ng-if="value === 3">
+        <stake-holder></stake-holder>
+    </div>
+    <div ng-if="value === 4">
+        <band-wise></band-wise>
+    </div>
+    <div ng-if="value === 5">
+        <rag-status></rag-status>
+    </div>
+</div>
+<div>
+</div>
+</div>

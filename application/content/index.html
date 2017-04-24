@@ -1,0 +1,80 @@
+<html >
+<head>
+
+  <!-- CSS Libraries --> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Custom CSS --> 
+  <link rel="stylesheet" href="../css/myStyle.css">
+
+  <!-- JS Libraries --> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+  
+  <!-- Custom JS --> 
+  <script src="../js/jQuery/myScript.js"></script> 
+  <script src="../js/angular/moduleDeclaration.js"></script> 
+  <script src="../js/angular/routers.js"></script> 
+  <script src="../js/angular/controllers.js"></script> 
+  <script src="../js/angular/services.js"></script> 
+  <script src="../js/angular/directives.js"></script> 
+  <script src="../js/angular/filters.js"></script> 
+
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+     
+    <div class="container">
+
+        <div class="MainApplication">
+
+          <div class="navigationbar">
+
+            <!-- Contains Left Header-->
+            <div class="left-header">
+
+                <div class="logo">
+                    <img src="../img/profile.png" alt="earch icon" height="40" width="42">
+                    LOGO
+                </div>
+            </div>
+            
+            <!-- Contains Right Header-->
+            <div class="right-header">
+
+                <div class="right-headerContent search-content">
+                    <img src="../img/search_icon.png" id="toggle" alt="earch icon" height="40" width="42">
+                </div>
+
+                <div class="right-headerContent">
+                    Logout
+                </div>
+
+                <div class="right-headerContent">
+                    <img src="../img/profile.png" alt="earch icon" height="40" width="42">
+                    Profile
+                </div>
+
+            </div>
+
+        </div>
+
+        <div ng-view> </div>
+
+      </div>
+       
+      <div class="footer">
+            <b>Powered By:</b> <br>GLOBALLOGIC INDIA PLIMITED INC.
+      </div>
+
+    </div>
+      
+
+</body>
+</html>

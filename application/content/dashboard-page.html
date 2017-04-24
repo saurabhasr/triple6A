@@ -1,0 +1,108 @@
+
+  <div class="content">
+   <div class="box">
+         <div class="box-heading">
+            <center><b>COMPLETION</b></center>
+        </div>
+        <div class="box-content">
+           <div class="chart">
+
+           </div>
+        </div>
+        <div class="box-footer">
+            <center><b><a class="link" href="#/detailed">VIEW CENTER LEVEL RESPONSE RATE ></a></b></center>
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-heading ">
+            <center><b>STAGE WISE</b></center>
+        </div>
+        <div class="box-content">
+           <div class="select-piechart">
+              <div class="select-piechartOption select-firstpiechart" ng-click ="setbuttonId(1)">
+                  6 Day
+              </div>
+              <div class="select-piechartOption" ng-click ="setbuttonId(2)">
+                  6 Week
+              </div>
+              <div class="select-piechartOption" ng-click ="setbuttonId(3)">
+                  6 Month
+              </div>
+           </div>
+           <div class="piechart">
+                <div ng-if="value === 1 || value === 0">
+                    Data Of 6 days
+                </div>
+                <div ng-if="value === 2">
+                    Data Of 6 weeks
+                </div>
+                <div ng-if="value === 3">
+                    Data Of 6 months
+                </div>
+           </div>
+        </div>
+        <div class="box-footer">
+            <center><b><a class="link" href="#/detailed">VIEW RAG STATUS OF EACH STAGE ></a></b></center>
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-heading">
+            <center><b>BAND WISE</b></center>
+        </div>
+        <div class="box-content">
+           <div class="chart">
+
+           </div>
+        </div>
+        <div class="box-footer">
+            <center><b><a class="link" href="#/detailed">VIEW RAG STATUS OF EACH STAGE ></a></b></center>
+        </div>
+    </div>
+    <div class="box box-col-2">
+        <div class="box-heading">
+            <center><b>STAKEHOLDERS</b></center>
+        </div>
+        <div class="box-content">
+          <div class="select-piechart ">
+              <div class="select-piechartOption select-firstpiechart" ng-click="settabId(1)">
+                  6 Days
+              </div>
+              <div class="select-piechartOption" ng-click="settabId(2)">
+                  6 Week
+              </div>
+              <div class="select-piechartOption" ng-click="settabId(3)">
+                  6 Month
+              </div>
+          </div>
+          <div class="piechart">
+             <div class="chart">
+                    <div ng-if="tab_val === 1 || tab_val === 0">
+                    Data Of 6 days bar charts
+                </div>
+                <div ng-if="tab_val === 2">
+                    Data Of 6 weeks bar charts
+                </div>
+                <div ng-if="tab_val === 3">
+                    Data Of 6 months bar charts
+                </div>
+             </div>
+          </div>
+        </div>
+        <div class="box-footer">
+            <center><b><a class="link" href="#/detailed">RAG STATUS OF RESPECTIVE STAKEHOLDERS OF EACH STAGE ></a></b></center>
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-heading">
+            <center><b>% OF RAG</b></center>
+        </div>
+        <div class="box-content">
+           <div class="chart">
+
+           </div> 
+        </div>
+        <div class="box-footer">
+            <center><b><a class="link" href="#/detailed">VIEW BAND WISE STATUS AT EACH STATUS ></a></b></center>
+        </div>
+    </div>
+</div>
