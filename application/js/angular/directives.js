@@ -1,14 +1,14 @@
 app.directive('bandWise',function(){
     return{
         restrict : 'E',
-        templateUrl: 'templates/directives/band-wise.html'
+        templateUrl: 'band-wise.html'
     };                                                   
 });
 
 app.directive('ragStatus', function(){
     return{
         restrict: 'E',
-        templateUrl:'templates/directives/rag-status.html'
+        templateUrl:'rag-status.html'
     };
 });
 
@@ -16,14 +16,14 @@ app.directive('ragStatus', function(){
 app.directive("responsePage", function() {
     return {
         restrict:"E",
-        templateUrl: "templates/directives/response-page.html"
+        templateUrl: "response-page.html"
     };
 });
 
 app.directive('stageWise',function(){
     return{
         restrict : 'E',
-        templateUrl: 'templates/directives/stage-wise.html'
+        templateUrl: 'stage-wise.html'
     };                                                   
 });
 
@@ -31,6 +31,6 @@ app.directive('stageWise',function(){
 app.directive('stakeHolder',function(){
     return{
         restrict : 'E',
-        templateUrl: 'templates/directives/stake-holder.html'
+        templateUrl: 'stake-holder.html'
     };                                                   
 });
