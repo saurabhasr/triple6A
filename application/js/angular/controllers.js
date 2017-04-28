@@ -27,4 +27,14 @@ app.controller('detailedController',function($scope){
     }
  
 });
-    
+
+app.controller('chartsCtrl', ['$scope','getChartData', function($scope, getChartData){
+    getChartData.getInfo().success(function(data){
+        $scope.chartData = data;
+        $scope.labels = $scope.chartData[0].labels;
+        $scope.data = $scope.chartData[1].data;
+        $scope.color = $scope.chartData[2].color;
+        console.log("Data aa chuka");
+        $scope.test = "abhishek";
+    });
+}]);

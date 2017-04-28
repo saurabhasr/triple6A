@@ -1,0 +1,11 @@
+[
+    {
+        "labels": ["RED", "AMBER", "GREEN"]
+    },
+    {
+        "data": [ "45", "30", "25"]
+    },
+    {
+        "color": ["RED", "AMBER" , "GREEN"]
+    }
+]
