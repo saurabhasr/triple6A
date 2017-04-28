@@ -32,9 +32,26 @@ app.controller('chartsCtrl', ['$scope','getChartData', function($scope, getChart
     getChartData.getInfo().success(function(data){
         $scope.chartData = data;
         $scope.labels = $scope.chartData[0].labels;
-        $scope.data = $scope.chartData[1].data;
-        $scope.color = $scope.chartData[2].color;
-        console.log("Data aa chuka");
-        $scope.test = "abhishek";
+        $scope.data = $scope.chartData[0].data;
+        $scope.options = {
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    
+                    }
+                    }],
+                yAxes: [{
+                    gridLines: {
+                        display: false
+                       
+                    },
+                     ticks: {
+                      beginAtZero:true
+                    }
+                    }]
+            }
+        };
+        console.log("Data mila"+ $scope.data);
     });
 }]);

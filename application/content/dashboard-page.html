@@ -5,7 +5,9 @@
         </div>
         <div class="box-content">
            <div class="chart">
-
+               <div>
+                 <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series" height="130" width="200"></canvas>
+               </div>
            </div>
         </div>
         <div class="box-footer">
@@ -30,13 +32,22 @@
            </div>
            <div class="piechart" ng-controller="chartsCtrl">
                 <div ng-if="value === 1 || value === 0">
-                    data of 6 days
+                    <div class="chartbox specialbox">
+                        <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" height="200" width="200">
+                        </canvas>  
+                    </div>
                 </div>
                 <div ng-if="value === 2">
-                    Data Of 6 weeks
+                    <div class="chartbox specialbox">
+                        <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" height="200" width="200">
+                        </canvas>  
+                    </div>
                 </div>
                 <div ng-if="value === 3">
-                    Data Of 6 months
+                   <div class="chartbox specialbox">
+                        <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" height="200" width="200">
+                        </canvas>  
+                    </div>
                 </div>
            </div>
         </div>
@@ -50,7 +61,10 @@
         </div>
         <div class="box-content">
            <div class="chart">
-
+                <div>
+                 <canvas id="base" class="chart-horizontal-bar" chart-data="data" chart-options="options" chart-labels="labels" height="200" >
+                </canvas> 
+               </div>
            </div>
         </div>
         <div class="box-footer">
@@ -97,7 +111,9 @@
         </div>
         <div class="box-content">
            <div class="chart">
-
+                <div>
+                 <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series" height="130" width="200"></canvas>
+               </div>
            </div> 
         </div>
         <div class="box-footer">
