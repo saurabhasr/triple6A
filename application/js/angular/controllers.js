@@ -2,6 +2,11 @@
 app.controller('myCtrl',function($scope){
 
     //$scope.name = "Peter";
+    
+     $scope.value = 0;
+     $scope.setbuttonId = function(selected_value){
+        $scope.value = selected_value;
+    }
 
 });
 
@@ -21,10 +26,6 @@ app.controller('dashboardController', function($scope){
 
 app.controller('detailedController',function($scope){
     
-     $scope.value = 0;
-     $scope.setbuttonId = function(selected_value){
-        $scope.value = selected_value;
-    }
  
 });
 
@@ -49,9 +50,16 @@ app.controller('chartsCtrl', ['$scope','getChartData', function($scope, getChart
                      ticks: {
                       beginAtZero:true
                     }
-                    }]
+                    }],
+               responsive: true,
+                maintainAspectRatio: true,
+        barDatasetSpacing: 1,
+        barShowStroke: true,
+        barStrokeWidth : 2,
+        barValueSpacing : 5
             }
         };
+        $scope.colours= [{fillColor:["#f20c2a", "#f1cf0b", "#12cc46"]}]
         console.log("Data mila"+ $scope.data);
     });
 }]);
