@@ -1,185 +1,195 @@
-body,html{
+body {
+    width:100%;
+    height:100%;
+ }
+
+/* Toggle Styles */
+
+#wrapper {
+    padding-left: 60px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    padding-left:0px;
+    width: 60px;
     height: 100%;
-}
-.header
-{
-    height:100px;
-}
-.icon{
-    color:white;
-    font-size:16px;
-    vertical-align: middle;
-}
-/* remove outer padding */
-.main .row{
-    padding: 0px;
-    margin: 0px;
+    margin-left: -250px;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
-/*Remove rounded coners*/
-nav.sidebar.navbar {
-    border-radius: 0px;
-    background-color: orangered;
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
 }
 
-nav.sidebar, .main{
-    -webkit-transition: margin 200ms ease-out;
-    -moz-transition: margin 200ms ease-out;
-    -o-transition: margin 200ms ease-out;
-    transition: margin 200ms ease-out;
-}
-
-/* Add gap to nav and right windows.*/
-
-/*small/medium side display*/
-@media (min-width: 768px) {
-
-/*Allow main to be next to Nav*/
-.main{
+#page-content-wrapper {
     position: absolute;
-    width: calc(100% - 40px); /*keeps 100% minus nav size*/
-    height: 100%;
-    margin-left: 40px;
-    float: right;
 }
 
-/*lets nav bar to be showed on mouseover*/
-nav.sidebar:hover + .main{
-    margin-left: 200px;
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
 }
 
-/*Center Brand*/
-nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-    margin-left: 0px;
-    background-color: orangered;
-}
-/*Center Brand*/
-nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
-    text-align: center;
-    width: 100%;
-    margin-left: 0px;
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height:100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-/*Center Icons*/
-nav.sidebar a{
-    padding-right: 13px;
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
 }
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2); /* color on hover*/
+    border-left: 3px solid white;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 80px;
+    padding-bottom: 20px;
+    line-height: 80px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: white;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;  /* color of brand on hover*/
+    background: none;
+}
+
+@media(min-width:768px) {
     
-/*adds border to bottom nav boxes*/
-nav.sidebar .navbar-nav > li{
-    border-bottom: 1px #ebebeb solid;
+    #wrapper {
+        padding-left: 0;
+    }
+
+    #wrapper.toggled {
+        width: 60px;
+        padding-left: 250px;
+    }
+
+    #sidebar-wrapper {
+        width: 60px;
+        background-color: #ff6400;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 250px;
+    }
+    #page-content
+    {
+        position:absolute;
+    }
+    #page-content-wrapper {
+        position: relative;
+        width:100%;
+        padding-left:60px;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: absolute !important;
+        padding-left:0px;
+        overflow-x: hidden;
+        margin-right: 0;
+    }
 }
 
-/*allows nav box to use 100% width*/
-nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
-    padding: 0 0px 0 0px;
-}
-
-/*gives sidebar width/height*/
-nav.sidebar{
-    width: 200px;
-    height: 100%;
-    margin-left: -160px;
-    float: left;
-    z-index: 8000;
-    margin-bottom: 0px;
-}
-.navbar-inverse .navbar-nav>li>a {
-    color: white !important;
-}
-/*give sidebar 100% width;*/
-nav.sidebar li {
-    width: 100%;
-    height: 60px;
-}
-
-/* Move nav to full on mouse over*/
-nav.sidebar:hover{
-    margin-left: 0px;
-}
-/*for hiden things when navbar hidden*/
-.forAnimate{
-    opacity: 0;
-}
-}
-
-nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
-color: white;
-background-color: transparent;
-}
-
-nav:hover .forAnimate{
-opacity: 1;
-}
-section{
-padding-left: 15px;
-}
-
-
-/* Header of application  */
-.nav-app
+.icon
 {
-    width: 100%;
-    border: 1px solid #eeeff0;
-    height: 60px;
-    background-color:white;
-    border-left: 0px !important;
+    padding-left: 20px;
+    padding-top:15px;
 }
-
-.text
+.mainicon
 {
-    color:white;
-    font-size: 16px;
-}
-.small-text
-{
-   font-size:10px;
+    padding-left:15px;
+    padding-top:22px;
 }
 .nav-content
 {
-   margin-left:10px;
+    padding-top:15px;
+    margin-left: 10px;
 }
-.main-navigationtab
+.small-text
 {
-    height: 80px !important;
-    border: 0px !important;
+    font-size:10px;
+}
+.large-text
+{
+    font-size:15px;
+    font-weight:700;
+    color: white;
+}
+.nav-bar
+{
+    width: 100% ;
+    border: 1px solid #e6ecf1;
+    height: 60px;
+    background-color:white;
+    border-left: 0px !important;
 }
 .searchIcon
 {
     width: 4%;
     height: 100%;
+    float:left;
     text-align: center;
-    padding-top:20px;
-    color:red;
-    font-size: large;
-    float:left
+    padding-top: 15px;
 }
 .searchbox
 {
     width: 70%;
     height:100%;
     border-bottom: 0px !important;
+    border:1px solid #e6ecf1;
     float:left;
-    font-size: 16px;
-    border: 1px solid #eeeff0;
-    padding-left: 15px;
 }
-.notifications
+input
 {
-    width:4%;
+    width:100%;
     height:100%;
-    border-right: 1px solid #eeeff0;
-    float:left;
-    font-size: large;
-    text-align: center;
-    padding-top:20px;
-    color:red;
+    padding-left: 20px;
 }
 .profile
-{
+{   
     width:18%;
     height: 100%;
-    border-right:1px solid #eeeff0;
+    border-right:1px solid #e6ecf1;
     float:left;
 }
 .user-image
@@ -201,7 +211,15 @@ padding-left: 15px;
     text-align: left;
     padding-top:20px;
 }
-
+.notification
+{
+    width:4%;
+    height:100%;
+    border-right:1px solid #e6ecf1;
+    float:left;
+    text-align: center;
+    padding-top: 15px;
+}
 .logout
 {
     width:4%;
@@ -211,20 +229,13 @@ padding-left: 15px;
     padding-top:20px;
     color:red;
 }
-.main-content
-{
-    background-color: #f7f8f9;
-    padding:15px;
-    width:100%;
-    height: 100% !important;
-}
 .box
 {
     float: left;
-    width: 30%;
+    width: 29%;
     height: 40%; 
-    border: 1px solid #eeeff0;
-    margin:15px;
+    border: 1px solid #e6ecf1;
+    margin:30px;
     background-color: white;
     border-radius: 5px;
 }
@@ -235,27 +246,66 @@ padding-left: 15px;
     width: 40%;
     height:15%;
     margin: 0 10% 0 30%;
-    border-bottom: 3px solid #557cb2;  
+    border-bottom: 3px solid #ff6400;  
 }
 .box-footer
 {
     width: 100%;
     height: 15%;
-    padding-top:15px;
-    border-top: 1px solid #eeeff0;
+    padding: 10px 150px 10px 150px;
+    border-top: 1px solid #e6ecf1;
+}
+.footer-spl
+{
+    padding:1% 43% 1% 43% !important;
 }
 .box-content
 {
     width: 100%;
     height: 70%;
-    border-top:1px solid #eeeff0;
+    border-top:1px solid #e6ecf1;
 }
 .box-col-2
 {
-   width: 63% !important;
+   width: 61.9% !important;
+   height:40% !important;
+}
+.link
+{
+    color:#ff6400;
 }
 .chartbox
 {
     height: 100%;
     width: 100%;   
+}
+.chart-select
+{
+    width: 20%;
+    float:left;
+    height:100%;
+    border-right: 1px solid #e6ecf1;
+}
+.chart-select li
+{
+    background-color: #ff6400;
+    height: 40px;
+}
+.chart-view
+{
+    padding-top:30px;
+    width:80%;
+    float:left;
+    height:100%;
+}
+.maincontainer
+{
+    height:100%;
+    width:100%;
+    padding:30px;
+}
+canvas
+{
+    height:70%;
+    width:70%;
 }

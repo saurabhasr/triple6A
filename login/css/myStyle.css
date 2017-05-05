@@ -1,6 +1,8 @@
 body{
-    background-color: #557cb2;
+    background-image: url('./../img/loginbg.jpg');
     font-family: 'Fira Sans', sans-serif;
+    height: 100%;
+    width:100%;
 }
 .content
 {
@@ -37,6 +39,10 @@ body{
 {
     font-size:20px;
     color: #001119  ;
+}
+.form-control
+{
+    border-radius: 0px !imporatnt;
 }
 input
 {

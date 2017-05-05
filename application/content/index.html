@@ -34,81 +34,97 @@
 
 <body ng-app="myApp" ng-controller="myCtrl">
 
-<nav class="navbar navbar-inverse sidebar" role="navigation">
-    <div class="container-fluid">
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li class="main-navigationtab">
-                    <a href="">
-                    <span class="nav-content"> TRIPLE 6 RAG
-                        <br><span class="small-text">Manangement Dashboard</span></span>
-                    <span  class="pull-right icon hidden-xs showopacity glyphicon glyphicon-home"></span></a>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <img class="pull-left mainicon" src="./../img/triplelogo2.png">
+                    <span class="large-text"> TRIPLE 6 RAG <br>
+                    </span>
                 </li>
-				<li ng-click="setbuttonId(1)">
-                    <a href="">
+                <li ng-click="setbuttonId(1)">
+                    <a href="#menu-toggle" id="menu-toggle">
                     <span class="nav-content">Dashboard</span>
-                    <span  class="pull-right icon hidden-xs showopacity glyphicon glyphicon-align-justify"></span></a></li>
+                    <img class="pull-left icon" src="./../img/nav1.png"></a>
+                </li>
 				<li ng-click="setbuttonId(2)">
                     <a href="">
                     <span class="nav-content"> Response</span>
-                    <span  class="pull-right icon hidden-xs showopacity glyphicon glyphicon-record"></span></a>
+                    <img class="pull-left icon" src="./../img/nav2.png"></a>
                 </li>
 				<li ng-click="setbuttonId(3)">
                     <a href="">
                     <span class="nav-content"> Stage</span>
-                    <span  class="pull-right icon hidden-xs showopacity glyphicon glyphicon-map-marker"></span></a>   
+                    <img class="pull-left icon" src="./../img/nav3.png"></a>   
                 </li>
 				<li ng-click="setbuttonId(4)">
                     <a href="">
                     <span class="nav-content"> StakeHolder</span>
-                    <span class="pull-right icon hidden-xs showopacity glyphicon glyphicon-user"></span></a>
+                    <img class="pull-left icon" src="./../img/nav4.png"></a>
                 </li>
 				<li ng-click="setbuttonId(5)">
                     <a href="">
                     <span class="nav-content"> Band</span>
-                    <span  class="pull-right icon hidden-xs showopacity glyphicon glyphicon-eye-open"></span></a>
+                    <img class="pull-left icon" src="./../img/nav5.png"></a>
                 </li>
 				<li ng-click="setbuttonId(6)">
                     <a href="">
                     <span class="nav-content"> % OF RAG</span>
-                    <span  class="pull-right icon hidden-xs showopacity glyphicon glyphicon-envelope"></span></a>
+                    <img class="pull-left icon" src="./../img/nav6.png"></a>
                 </li>
-			</ul>
-		</div>
-	</div>
-</nav>
-<div class="main">
-<!-- Content Here -->
-    <div class="nav-app">
-        <div class="searchIcon">
-            <span class="glyphicon glyphicon-search"></span>
+            </ul>
         </div>
-        <div>
-            <input type="text" placeholder=" Search for Project and Professionals" class="searchbox">
-        </div>
-        <div class="notifications">
-            <span class="glyphicon glyphicon-bell"></span>
-        </div>
-        <div class="profile">
-            <div class="user-image">
-                <img src="./../img/image.jpg" class="img-circle">
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="nav-bar">
+                <div class="searchIcon">
+                <img src="./../img/search.png">
+                </div>
+                <div class="searchbox">
+                <input type="text" placeholder=" Search for Project and Professionals" >
+                </div>
+                <div class="notification">
+                  <img src="./../img/alert.png">
+                </div>
+                <div class="profile">
+                  <div class="user-image">
+                        <img src="./../img/profile.png" class="img-circle">
+                 </div>
+                <div class="user-dropdown ">
+                    USER NAME <span class="caret"></span>
+                </div>
+                </div>
+                 <div class="logout">
+                <img src="./../img/logout.png">
+                </div>
             </div>
-            <div class="user-dropdown ">
-                 USER NAME <span class="caret"></span>
+            <div class="maincontainer" ng-controller="chartsCtrl"> 
+                <ng-view></ng-view>
             </div>
         </div>
-        <div class="logout">
-            <span class="glyphicon glyphicon-log-out"></span>
-        </div>
+        <!-- /#page-content-wrapper -->
+
     </div>
-      
-    <!-- Main Application charts-->
-    <div ng-controller="chartsCtrl"> 
-            <ng-view></ng-view>
-    </div>
-</div> 
- 
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
 
 </body>
 </html>
