@@ -57,6 +57,7 @@ body {
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
+    
 }
 
 .sidebar-nav li a {
@@ -81,7 +82,7 @@ body {
 .sidebar-nav > .sidebar-brand {
     height: 80px;
     padding-bottom: 20px;
-    line-height: 80px;
+    line-height: inherit;
 }
 
 .sidebar-nav > .sidebar-brand a {
@@ -106,7 +107,7 @@ body {
 
     #sidebar-wrapper {
         width: 60px;
-        background-color: #ff6400;
+        background-image: url('./../img/navbg.png');
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -135,25 +136,39 @@ body {
     padding-left: 20px;
     padding-top:15px;
 }
+.glicon
+{
+    padding-left:10px;
+    padding-bottom: 5px;
+}
 .mainicon
 {
     padding-left:15px;
-    padding-top:22px;
+    padding-top:5px;
 }
 .nav-content
 {
-    padding-top:15px;
+    padding-top:15px !important;
     margin-left: 10px;
 }
 .small-text
 {
     font-size:10px;
+    margin-left: 25px;
+    color:#ff6400;
 }
 .large-text
 {
     font-size:15px;
     font-weight:700;
     color: white;
+    margin-top:25px;
+}
+.main-text
+{
+    font-size:20px;
+    color:#ff6400;
+    margin-left:30px;
 }
 .nav-bar
 {
@@ -162,6 +177,12 @@ body {
     height: 60px;
     background-color:white;
     border-left: 0px !important;
+}
+.GLTab
+{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 .searchIcon
 {
@@ -233,6 +254,7 @@ input
 {
     float: left;
     width: 29%;
+    position: relative;
     height: 40%; 
     border: 1px solid #e6ecf1;
     margin:30px;
@@ -246,11 +268,14 @@ input
     width: 40%;
     height:15%;
     margin: 0 10% 0 30%;
+    top:0;
     border-bottom: 3px solid #ff6400;  
+    position: relative;
 }
 .box-footer
 {
     width: 100%;
+    bottom:0;
     height: 15%;
     padding: 10px 150px 10px 150px;
     border-top: 1px solid #e6ecf1;
@@ -303,6 +328,7 @@ input
     height:100%;
     width:100%;
     padding:30px;
+    background-color:#f7f8f9;
 }
 canvas
 {
