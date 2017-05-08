@@ -4,8 +4,13 @@ app.controller('myCtrl',function($scope){
     //$scope.name = "Peter";
     
      $scope.value = 0;
+  
+    
      $scope.setbuttonId = function(selected_value){
         $scope.value = selected_value;
+    }
+     $scope.settabId = function(selected_tab){
+        $scope.tab_val = selected_tab;
     }
 
 });
@@ -13,12 +18,8 @@ app.controller('myCtrl',function($scope){
 
 app.controller('dashboardController', function($scope){
     
-    $scope.value = 0;
     $scope.tab_val = 0;
     
-    $scope.setbuttonId = function(selected_value){
-        $scope.value = selected_value;
-    }
     $scope.settabId = function(selected_tab){
         $scope.tab_val = selected_tab;
     }
@@ -28,6 +29,20 @@ app.controller('detailedController',function($scope){
     
  
 });
+
+app.config(['ChartJsProvider', function (ChartJsProvider) {
+    
+    // Configure all charts
+    ChartJsProvider.setOptions({
+      chartColors: ['#f20c2a', '#f1cf0b','#12cc46'],
+      responsive: true
+    });
+    
+    // Configure all line charts
+    ChartJsProvider.setOptions('line', {
+      showLines: false
+    });
+  }])
 
 app.controller('chartsCtrl', ['$scope','getChartData', function($scope, getChartData){
     
@@ -52,12 +67,9 @@ app.controller('chartsCtrl', ['$scope','getChartData', function($scope, getChart
                       beginAtZero:true
                     }
                     }],
-                colours:["#f20c2a", "#f1cf0b", "#12cc46"],
-            }
+            },
+            thickness: 5
         };
         console.log("Data mila"+ $scope.data);
     });
-    (function (ChartJsProvider) {
-  ChartJsProvider.setOptions({ colors : [ '#f20c2a', '#f1cf0b', '#12cc46'] });
-}); 
 }]);
