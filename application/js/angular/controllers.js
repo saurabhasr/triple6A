@@ -30,6 +30,7 @@ app.controller('detailedController',function($scope){
 });
 
 app.controller('chartsCtrl', ['$scope','getChartData', function($scope, getChartData){
+    
     getChartData.getInfo().success(function(data){
         $scope.chartData = data;
         $scope.labels = $scope.chartData[0].labels;
@@ -51,15 +52,12 @@ app.controller('chartsCtrl', ['$scope','getChartData', function($scope, getChart
                       beginAtZero:true
                     }
                     }],
-               responsive: true,
-                maintainAspectRatio: true,
-        barDatasetSpacing: 1,
-        barShowStroke: true,
-        barStrokeWidth : 2,
-        barValueSpacing : 5
+                colours:["#f20c2a", "#f1cf0b", "#12cc46"],
             }
         };
-        $scope.colours= [{fillColor:["#f20c2a", "#f1cf0b", "#12cc46"]}]
         console.log("Data mila"+ $scope.data);
     });
+    (function (ChartJsProvider) {
+  ChartJsProvider.setOptions({ colors : [ '#f20c2a', '#f1cf0b', '#12cc46'] });
+}); 
 }]);
