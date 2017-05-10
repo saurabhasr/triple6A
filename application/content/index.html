@@ -1,0 +1,134 @@
+<html >
+<head>
+
+  <!-- CSS Libraries --> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,200" rel="stylesheet">
+
+  <!-- Custom CSS --> 
+  <link rel="stylesheet" href="../css/myStyle.css">
+
+  <!-- JS Libraries --> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <script src="../js/angularcharts/angular-chart.min.js"></script>     
+       
+  
+  <!-- Custom JS --> 
+  <script src="../js/jQuery/myScript.js"></script> 
+  <script src="../js/angular/moduleDeclaration.js"></script> 
+  <script src="../js/angular/routers.js"></script> 
+  <script src="../js/angular/controllers.js"></script> 
+  <script src="../js/angular/services.js"></script> 
+  <script src="../js/angular/directives.js"></script> 
+  <script src="../js/angular/filters.js"></script> 
+  
+
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <img class="pull-left mainicon" src="./../img/triplelogo2.png">
+                    <div class="large-text"> TRIPLE 6 RAG<br>
+                        <span class="small-text">MANAGEMENT DASHBOARD </span>
+                    </div>
+                </li>
+                <li ng-click="setbuttonId(1)">
+                    <a href="#menu-toggle" id="menu-toggle">
+                    <span class="nav-content">Dashboard</span>
+                    <img class="pull-left icon" src="./../img/nav1.png"></a>
+                </li>
+				<li ng-click="setbuttonId(2)">
+                    <a href="">
+                    <span class="nav-content"> Response</span>
+                    <img class="pull-left icon" src="./../img/nav2.png"></a>
+                </li>
+				<li ng-click="setbuttonId(3)">
+                    <a href="">
+                    <span class="nav-content"> Stage</span>
+                    <img class="pull-left icon" src="./../img/nav3.png"></a>   
+                </li>
+				<li ng-click="setbuttonId(4)">
+                    <a href="">
+                    <span class="nav-content"> StakeHolder</span>
+                    <img class="pull-left icon" src="./../img/nav4.png"></a>
+                </li>
+				<li ng-click="setbuttonId(5)">
+                    <a href="">
+                    <span class="nav-content"> Band</span>
+                    <img class="pull-left icon" src="./../img/nav5.png"></a>
+                </li>
+				<li ng-click="setbuttonId(6)">
+                    <a href="">
+                    <span class="nav-content"> % OF RAG</span>
+                    <img class="pull-left icon" src="./../img/nav6.png"></a>
+                </li>
+                <li class="GLTab">
+                    <img class=" pull-left glicon" src="./../img/logo2.png">
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="nav-bar">
+                <div class="searchIcon">
+                <img src="./../img/search.png">
+                </div>
+                <div class="searchbox">
+                <input type="text" placeholder=" Search for Project and Professionals" >
+                </div>
+                <div class="notification">
+                  <img src="./../img/alert.png">
+                </div>
+                <div class="profile">
+                  <div class="user-image">
+                        <img src="./../img/profile.png" class="img-circle">
+                 </div>
+                <div class="user-dropdown ">
+                    USER NAME <span class="caret"></span>
+                </div>
+                </div>
+                 <div class="logout">
+                <img src="./../img/logout.png">
+                </div>
+            </div>
+            <div class="maincontainer" ng-controller="chartsCtrl"> 
+                <ng-view></ng-view>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+
+</body>
+</html>

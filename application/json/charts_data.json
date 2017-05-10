@@ -1,0 +1,13 @@
+[
+    {
+        "chartType":"piechart",
+        "labels": ["6Days","6Weeks","6Months"],
+        "data":["70","55","25"]
+    },
+    {
+        "chartType":"barchart",
+        "labels":["6Days","6WEEKS","6Months"],
+        "data":["70","20","10"]
+    
+    }
+]
