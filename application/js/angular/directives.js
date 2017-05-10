@@ -1,3 +1,10 @@
+app.directive('dashboardPage', function(){
+    return{
+        restrict: 'E',
+        templateUrl:'dashboard-page.html'
+    };
+});
+
 app.directive('bandWise',function(){
     return{
         restrict : 'E',

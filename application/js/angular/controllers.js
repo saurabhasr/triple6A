@@ -2,18 +2,24 @@
 app.controller('myCtrl',function($scope){
 
     //$scope.name = "Peter";
+    
+     $scope.value = 0;
+  
+    
+     $scope.setbuttonId = function(selected_value){
+        $scope.value = selected_value;
+    }
+     $scope.settabId = function(selected_tab){
+        $scope.tab_val = selected_tab;
+    }
 
 });
 
 
 app.controller('dashboardController', function($scope){
     
-    $scope.value = 0;
     $scope.tab_val = 0;
     
-    $scope.setbuttonId = function(selected_value){
-        $scope.value = selected_value;
-    }
     $scope.settabId = function(selected_tab){
         $scope.tab_val = selected_tab;
     }
@@ -21,14 +27,25 @@ app.controller('dashboardController', function($scope){
 
 app.controller('detailedController',function($scope){
     
-     $scope.value = 0;
-     $scope.setbuttonId = function(selected_value){
-        $scope.value = selected_value;
-    }
  
 });
 
+app.config(['ChartJsProvider', function (ChartJsProvider) {
+    
+    // Configure all charts
+    ChartJsProvider.setOptions({
+      chartColors: ['#f20c2a', '#f1cf0b','#12cc46'],
+      responsive: true
+    });
+    
+    // Configure all line charts
+    ChartJsProvider.setOptions('line', {
+      showLines: false
+    });
+  }])
+
 app.controller('chartsCtrl', ['$scope','getChartData', function($scope, getChartData){
+    
     getChartData.getInfo().success(function(data){
         $scope.chartData = data;
         $scope.labels = $scope.chartData[0].labels;
@@ -49,8 +66,9 @@ app.controller('chartsCtrl', ['$scope','getChartData', function($scope, getChart
                      ticks: {
                       beginAtZero:true
                     }
-                    }]
-            }
+                    }],
+            },
+            thickness: 5
         };
         console.log("Data mila"+ $scope.data);
     });

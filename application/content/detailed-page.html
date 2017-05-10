@@ -1,111 +1,22 @@
 <div>
-<!-- selective navigation bar-->
-<div class="navigation-window">
-<div class="navigation-header">
-   <center><b>RAG STATUS</b><br><span class="white-text">STAGE WISE</span></center>
-</div>
-<ul>
-  <li>
-       <div class="navigation-option">
-          <a href="">
-               <div class="option-logo">
-                   <i class="fa fa-pie-chart" aria-hidden="true"></i>
-               </div>
-               <div class="option-name" ng-click="setbuttonId(1)">
-                   <b>RESPONSE</b><br>Rate
-               </div>
-               <div class="option-design">
-                <b> > </b>   
-               </div>
-           </a>
-       </div>
-   </li>
-   <hr>
-   <li>
-       <div class="navigation-option">
-          <a href="">
-               <div class="option-logo">
-                   <i class="fa fa-map-marker" aria-hidden="true"></i>
-               </div>
-               <div class="option-name" ng-click="setbuttonId(2)">
-                   <b>Stage</b> <br>RAG Status
-               </div>
-               <div class="option-design">
-                   >
-               </div>
-           </a>
-       </div>
-   </li>
-   <hr>
-   <li>
-       <div class="navigation-option">
-          <a href="">
-               <div class="option-logo">
-                   <i class="fa fa-user" aria-hidden="true"></i>
-               </div>
-               <div class="option-name" ng-click="setbuttonId(3)">
-                   <b>StakeHolder</b><br>RAG Status
-               </div>
-               <div class="option-design">
-                   >
-               </div>
-           </a>
-       </div>
-   </li>
-   <hr>
-   <li>
-       <div class="navigation-option">
-          <a href="">
-               <div class="option-logo">
-                   <i class="fa fa-eye" aria-hidden="true"></i>
-               </div>
-               <div class="option-name" ng-click="setbuttonId(4)">
-                   <b>BAND</b> <br> RAG Status
-               </div>
-               <div class="option-design">
-                   >
-               </div>
-           </a>
-       </div>
-   </li>
-   <hr>
-   <li>
-       <div class="navigation-option">
-          <a href="">
-               <div class="option-logo">
-                   <i class="fa fa-sliders" aria-hidden="true"></i>
-               </div>
-               <div class="option-name" ng-click="setbuttonId(5)">
-                   <b>% of RAG</b> <br> Red/Green/Amber
-               </div>
-               <div class="option-design">
-                   >
-               </div>
-           </a>
-       </div>
-   </li>
-</ul>
-</div>
-
-</div>
-<div>
-    <div class="Content-page">
-    <div ng-if="value === 1 || value === 0">
-        <response-page></response-page>
+    <div class="main-content">
+        <div ng-if="value === 1 || value === 0">
+            <dashboard-page></dashboard-page>
+        </div>    
+        <div ng-if="value === 2">
+            <response-page></response-page>
+        </div>
+        <div ng-if="value === 3">
+            <stage-wise></stage-wise>
+        </div>
+        <div ng-if="value === 4">
+            <stake-holder></stake-holder>
+        </div>
+        <div ng-if="value === 5" >
+            <band-wise></band-wise>
+        </div>
+        <div  ng-if="value === 6">
+            <rag-status></rag-status>
+        </div>    
     </div>
-    <div ng-if="value === 2">
-        <stage-wise></stage-wise>
-    </div>
-    <div ng-if="value === 3">
-        <stake-holder></stake-holder>
-    </div>
-    <div ng-if="value === 4">
-        <band-wise></band-wise>
-    </div>
-    <div ng-if="value === 5">
-        <rag-status></rag-status>
-    </div>
-    </div>
-</div>
-<div>
 </div>

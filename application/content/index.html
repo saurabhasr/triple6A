@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" >
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,200" rel="stylesheet">
 
   <!-- Custom CSS --> 
   <link rel="stylesheet" href="../css/myStyle.css">
@@ -33,54 +34,101 @@
 </head>
 
 <body ng-app="myApp" ng-controller="myCtrl">
-     
-    <div class="container">
 
-        <div class="MainApplication">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <img class="pull-left mainicon" src="./../img/triplelogo2.png">
+                    <div class="large-text"> TRIPLE 6 RAG<br>
+                        <span class="small-text">MANAGEMENT DASHBOARD </span>
+                    </div>
+                </li>
+                <li ng-click="setbuttonId(1)">
+                    <a href="#menu-toggle" id="menu-toggle">
+                    <span class="nav-content">Dashboard</span>
+                    <img class="pull-left icon" src="./../img/nav1.png"></a>
+                </li>
+				<li ng-click="setbuttonId(2)">
+                    <a href="">
+                    <span class="nav-content"> Response</span>
+                    <img class="pull-left icon" src="./../img/nav2.png"></a>
+                </li>
+				<li ng-click="setbuttonId(3)">
+                    <a href="">
+                    <span class="nav-content"> Stage</span>
+                    <img class="pull-left icon" src="./../img/nav3.png"></a>   
+                </li>
+				<li ng-click="setbuttonId(4)">
+                    <a href="">
+                    <span class="nav-content"> StakeHolder</span>
+                    <img class="pull-left icon" src="./../img/nav4.png"></a>
+                </li>
+				<li ng-click="setbuttonId(5)">
+                    <a href="">
+                    <span class="nav-content"> Band</span>
+                    <img class="pull-left icon" src="./../img/nav5.png"></a>
+                </li>
+				<li ng-click="setbuttonId(6)">
+                    <a href="">
+                    <span class="nav-content"> % OF RAG</span>
+                    <img class="pull-left icon" src="./../img/nav6.png"></a>
+                </li>
+                <li class="GLTab">
+                    <img class=" pull-left glicon" src="./../img/logo2.png">
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
 
-          <div class="navigationbar">
-
-            <!-- Contains Left Header-->
-            <div class="left-header">
-
-                <div class="logo">
-                    <img src="../img/profile.png" alt="earch icon" height="40" width="42">
-                    LOGO
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="nav-bar">
+                <div class="searchIcon">
+                <img src="./../img/search.png">
+                </div>
+                <div class="searchbox">
+                <input type="text" placeholder=" Search for Project and Professionals" >
+                </div>
+                <div class="notification">
+                  <img src="./../img/alert.png">
+                </div>
+                <div class="profile">
+                  <div class="user-image">
+                        <img src="./../img/profile.png" class="img-circle">
+                 </div>
+                <div class="user-dropdown ">
+                    USER NAME <span class="caret"></span>
+                </div>
+                </div>
+                 <div class="logout">
+                <img src="./../img/logout.png">
                 </div>
             </div>
-            
-            <!-- Contains Right Header-->
-            <div class="right-header">
-
-                <div class="right-headerContent search-content">
-                    <img src="../img/search_icon.png" id="toggle" alt="earch icon" height="40" width="42">
-                </div>
-
-                <div class="right-headerContent">
-                    Logout
-                </div>
-
-                <div class="right-headerContent">
-                    <img src="../img/profile.png" alt="earch icon" height="40" width="42">
-                    Profile
-                </div>
-
+            <div class="maincontainer" ng-controller="chartsCtrl"> 
+                <ng-view></ng-view>
             </div>
-
         </div>
-
-        <div ng-controller="chartsCtrl"> 
-        <ng-view></ng-view>    
-        </div>
-
-      </div>
-       
-      <div class="footer">
-            <b>Powered By:</b> <br>GLOBALLOGIC INDIA PLIMITED INC.
-      </div>
+        <!-- /#page-content-wrapper -->
 
     </div>
-      
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
 
 </body>
 </html>

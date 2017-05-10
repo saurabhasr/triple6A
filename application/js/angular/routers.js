@@ -2,11 +2,10 @@
 app.config(['$routeProvider',function($routeProvider){
   $routeProvider
   //routing 
-  .when('/dashboard',    {title:'ScoreData',templateUrl:'dashboard-page.html',controller:'dashboardController'})
   .when('/detailed',    {title:'ScoreData',templateUrl:'detailed-page.html',controller:'detailedController'})
 
   //default page 
-  .otherwise({ redirectTo:'/dashboard'});
+  .otherwise({ redirectTo:'/detailed'});
 }])
 .run(['$location', '$rootElement', '$window', '$rootScope', function($location, $rootElement, $window, $rootScope) {
   
