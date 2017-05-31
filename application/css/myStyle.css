@@ -120,7 +120,7 @@ body {
 {
     font-size:10px;
     margin-left: 25px;
-    color:#ff6400;
+    color:white;
 }
 .large-text
 {
@@ -273,12 +273,13 @@ input
 }
 .chart-select-nav 
 {
-    height:100%;
+    height:auto;
     width:100%;
-    padding-top:50px;
-    padding-bottom:50px;
+    margin-top:50%;
+    padding:0;
+    list-style: none;
 }
-.chart-select-nav-tab
+.chart-select-nav li
 {
     height: 40px; 
     padding-left:10px;
@@ -286,13 +287,13 @@ input
     font-weight: 700 !important;
     border-top: 1px solid #e6ecf1;
 }
-#tab:hover
+.chart-select-nav li:hover
 {
     background-color:#ff6400;
     color:white;
     border:1px solid #e6ecf1;
 }
-.lasttab
+.last-tab
 {
     border-bottom: 1px solid #e6ecf1;
 }
@@ -340,7 +341,7 @@ input
 
     #sidebar-wrapper {
         width: 60px;
-        background-image: url('./../img/navbg.png');
+        background-color: #ff6400;
     }
 
     #wrapper.toggled #sidebar-wrapper {

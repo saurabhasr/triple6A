@@ -1,0 +1,28 @@
+{
+  "stageScore": {
+    "6 Weeks": {
+      "completionPercent": 16,
+      "redPercent": 0,
+      "amberPercent": 0,
+      "greenPercent": 0
+    },
+    "6 Hours": {
+      "completionPercent": 26,
+      "redPercent": 0,
+      "amberPercent": 0,
+      "greenPercent": 0
+    },
+    "6 Months": {
+      "completionPercent": 5,
+      "redPercent": 0,
+      "amberPercent": 0,
+      "greenPercent": 0
+    },
+    "6 Days": {
+      "completionPercent": 0,
+      "redPercent": 0,
+      "amberPercent": 0,
+      "greenPercent": 0
+    }
+  }
+}

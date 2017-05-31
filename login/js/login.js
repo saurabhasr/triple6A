@@ -1,36 +1,37 @@
 var app = angular.module('myApp',[]);
-
-app.controller('myCtrl','$http','loginValidation', function($scope){
+    
+app.controller('myCtrl', ['$scope', '$rootScope','$http', 'AuthenticationService', function($scope, $rootScope, $http, AuthenticationService){
 
     $scope.username = "";
     $scope.password = "";
-    $scope.login = false;
+    $scope.loginData = {
+        userId: "",
+        password: ""
+    };
+    $rootScope.login = false;
+    $rootScope.token= "";
+    $rootScope.userData = {}; // user data recieved after login
 
     $scope.checkLogin = function(){
-       
-         if(
-            ($scope.username=="admin" && $scope.password == "password")||
-            ($scope.username=="sanjana" && $scope.password == "password")
-        ){
-            $scope.login = true;
-            localStorage.setItem('auth', 'true');
-            location.href = "../../application/content/index.html"
-        }
-        else{
-            $scope.login = false;
-            localStorage.setItem('auth', 'false');
-            sweetAlert("", "Invalid Username or Password", "error");
-        }
+        
+        $scope.loginData.userId = $scope.username;
+        $scope.loginData.password = $scope.password; 
+        
+        // calling Authentication Service
+        AuthenticationService.validateLogin($scope.loginData)
+            .success(function(response){
+                    alert("in");
+                    $rootScope.userData = response;
+                    console.log(response);
+                    $rootScope.token = response.token;
+                    $rootScope.login = true;
+                    location.href = "../../application/content/index.html";
+            }).error(function(error){
+                     $scope.login = false;
+                     sweetAlert("", "Invalid Username or Password", "error");
+            });
+            
     }
-//        var user= {
-//            userId : $scope.username,
-//            password: $scope.password
-//        }
-//        
-//        //calling post method
-//        loginValidation.validateUser(user);                        
-//    }
 
 
-});
-
+}]);

@@ -1,6 +1,8 @@
 body{
     background-image: url('./../img/loginbg.jpg');
     font-family: 'Fira Sans', sans-serif;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
     height: 100%;
     width:100%;
 }
@@ -10,7 +12,6 @@ body{
     width: 350px;
     background-color: white;
     position:absolute;
-    border:2px solid #eeeff0;
     margin-top:-200px;
     margin-left:-165px;
     top:50%;
@@ -40,27 +41,25 @@ body{
     font-size:20px;
     color: #001119  ;
 }
-.form-control
-{
-    border-radius: 0px !imporatnt;
-}
 input
 {
     height: 40px !important;
+    border-radius: 0px !important;
 }
 button
 {
-    width:307px;
+    width:309px;
     color:white;
     font-size:20px !important;
     background-color:#f48342;
     font-weight: 600 !important;
+    border-radius: 0px !important;
 }
 .Footer
 {
     margin-top:30px;
     height:40px;
-    padding-top:15px;
+    padding-top:12px;
     border-top: 1px solid #eeeff0;
     text-align: center;
 }
