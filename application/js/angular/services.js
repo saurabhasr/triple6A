@@ -16,8 +16,8 @@ app.factory('getChartsData',['$http', function($http){
         getCompletionData: function(token){
             var getCompletionData = {
                 method: 'GET',
-                url: './../json/realcompletionData.json', // ENDPOINTS.BASE_URL.concat('stats/COMPLETION')
-                headers:{
+                url: ENDPOINTS.BASE_URL.concat('/stats/COMPLETION'),
+                headers: {
                     token: token
                 }
             };
@@ -29,7 +29,7 @@ app.factory('getChartsData',['$http', function($http){
         getStageWiseData: function(token){
             var getStageWiseData = {
                 method: 'GET',
-                url: './../json/realstageData.json', // ENDPOINTS.BASE_URL.concat('stats/STAGEWISE')
+                url: ENDPOINTS.BASE_URL.concat('/stats/STAGEWISE'),
                 headers: {
                     token: token
                 }
@@ -38,15 +38,175 @@ app.factory('getChartsData',['$http', function($http){
             return $http(getStageWiseData);
         },
         
-         //for getting bandwise data (AKA third chart in dashboard)
+         //for getting bandwise data (AKA third chart in dashboard)       **********************************************************************
         getBandWiseData: function(token){
             var getBandWiseData = {
                 method: 'GET',
-                url: './../json/realBandWiseData' , // ENDPOINTS.BASE_URL.concat()
+                url: 'ENDPOINTS.BASE_URL.concat()',
+                headers:{
+                    token: token  // authentication token and  
+                }
             };
             
             return $http(getBandWiseData);
-        }
+        },
+        
+        // ********* Caluculating Response Location Wise ********
+        
+        //Response for noida location
+        getNoidaData: function(token){
+            var getNoidaData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/COMPLETION'),
+                params: {
+                    location: 'Noida' 
+                },
+                headers:{
+                    token: token
+                }
+            };
+            return $http(getNoidaData);
+        },
+        
+        //getting Response data from bangalore Location
+        getBangaloreData: function(token){
+            var getBangaloreData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/COMPLETION'),
+                params: {
+                    location: 'Bangalore' 
+                },
+                headers:{
+                    token: token
+                }
+            };
+            return $http(getBangaloreData);
+        },
+        
+        //getting data from Chennai location
+        getChennaiData: function(token){
+            var getChennaiData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/COMPLETION'),
+                params: {
+                    location: 'Chennai' 
+                },
+                headers:{
+                    token: token
+                }
+            };
+            return $http(getChennaiData);
+        },
+        
+        //getting data for gurgaon location
+        getGurgaonData: function(token){
+            var getGurgaonData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/COMPLETION'),
+                params: {
+                    location: 'Gurgaon' 
+                },
+                headers:{
+                    token: token
+                }
+            };
+            return $http(getGurgaonData);
+        },
+        
+        //getting data for nagpur location
+        getNagpurData: function(token){
+            var getNagpurData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/COMPLETION'),
+                params: {
+                    location: 'Nagpur' 
+                },
+                headers:{
+                    token: token
+                }
+            };
+            return $http(getNagpurData);
+        },
+        
+        //************** Getting stage Wise Data Location Wise *****************
+        
+        //getting stage data for noida location
+        getNoidaStageData: function(token){
+            var getNoidaStageData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/STAGEWISE'),
+                params: {
+                    location: 'Noida'
+                },
+                headers: {
+                    token: token
+                }
+            };
+            return $http(getNoidaStageData);
+        },
+        
+        //getting stage data for Gurgaon location
+        getGurgaonStageData: function(token){
+            var getGurgaonStageData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/STAGEWISE'),
+                params: {
+                    location: 'Gurgaon'
+                },
+                headers: {
+                    token: token
+                }
+            };
+            return $http(getGurgaonStageData);
+        },
+        
+        //getting stage data for Nagpur location
+        getNagpurStageData: function(token){
+            var getNagpurStageData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/STAGEWISE'),
+                params: {
+                    location: 'Nagpur'
+                },
+                headers: {
+                    token: token
+                }
+            };
+            return $http(getNagpurStageData);
+        },
+        
+        //getting stage data for chennai location
+        getChennaiStageData: function(token){
+            var getChennaiStageData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/STAGEWISE'),
+                params: {
+                    location: 'Chennai'
+                },
+                headers: {
+                    token: token
+                }
+            };
+            return $http(getChennaiStageData);
+        },
+        
+        //getting stage data for chennai location
+        getBangaloreStageData: function(token){
+            var getBangaloreStageData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/STAGEWISE'),
+                params: {
+                    location: 'Bangalore'
+                },
+                headers: {
+                    token: token
+                }
+            };
+            return $http(getBangaloreStageData);
+        },
+        
+        // ************************ Getting Data for Band Wise Page ********************
+        
         
     }
 }]);

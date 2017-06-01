@@ -257,8 +257,7 @@ input
 }
 .box-col-2
 {
-   width: 61.9% !important;
-   height:40% !important;
+   width: 60.7% !important;
 }
 .link
 {
@@ -333,7 +332,6 @@ input
     #wrapper {
         padding-left: 0;
     }
-
     #wrapper.toggled {
         width: 60px;
         padding-left: 250px;
@@ -356,7 +354,6 @@ input
         width:100%;
         padding-left:60px;
     }
-
     #wrapper.toggled #page-content-wrapper {
         position: absolute !important;
         padding-left:0px;
@@ -365,5 +362,19 @@ input
         height:100%;
         width:100%;
         margin-right: 0;
+    }
+}
+
+@media(min-width:1368px)
+{
+    .maincontainer{
+        padding:30px;
+    }
+    .box{
+        margin:30px;
+    }
+    .box-col-2
+    {
+        width: 62% !important;
     }
 }

@@ -20,7 +20,6 @@ app.controller('myCtrl', ['$scope', '$rootScope','$http', 'AuthenticationService
         // calling Authentication Service
         AuthenticationService.validateLogin($scope.loginData)
             .success(function(response){
-                    alert("in");
                     $rootScope.userData = response;
                     console.log(response);
                     $rootScope.token = response.token;
