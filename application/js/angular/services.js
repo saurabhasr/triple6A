@@ -39,10 +39,13 @@ app.factory('getChartsData',['$http', function($http){
         },
         
          //for getting bandwise data (AKA third chart in dashboard)       **********************************************************************
-        getBandWiseData: function(token){
+        getBandWiseData: function(token, band){
             var getBandWiseData = {
                 method: 'GET',
                 url: 'ENDPOINTS.BASE_URL.concat()',
+                params:{
+                    Band : band
+                },
                 headers:{
                     token: token  // authentication token and  
                 }

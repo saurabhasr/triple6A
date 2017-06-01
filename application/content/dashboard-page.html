@@ -58,11 +58,16 @@
         <center><b><a href="" class="link">DETAILS ></a></b></center>
     </div>
 </div>
-<div class="box" ng-controller="chartsCtrl">
+<div class="box" ng-controller="BandWiseController">
     <div class="box-heading">
         <center><b>BAND WISE</b></center>
     </div>
     <div class="box-content">
+        <div class="band-box">
+            <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
+                <option value="" >Select Band</option>
+            </select>
+        </div>
         <div class="chart-view barchart">
              <canvas class="chart-horizontal-bar" chart-data="data" chart-options="options" chart-labels="labels" >
             </canvas>

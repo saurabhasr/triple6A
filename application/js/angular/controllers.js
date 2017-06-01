@@ -70,25 +70,7 @@ app.controller('chartsCtrl', ['$scope','$rootScope','getChartData', function($sc
         $scope.labels = $scope.chartData.labels;
         $scope.data = $scope.chartData.data;
         
-        $scope.options = {
-            scales: {
-                xAxes: [{
-                    barPercentage: 0.5,
-                    gridLines: {
-                        display: false
-                    }
-                    }],
-                yAxes: [{
-                    gridLines: {
-                        display: false
-                       
-                    },
-                     ticks: {
-                      beginAtZero:true
-                    }
-                    }],
-            },
-        }     
+        $scope.options = $rootScope.barChartOptions;    
 
     });
 }]);
@@ -177,6 +159,18 @@ app.controller('StageWiseController',['$scope','$rootScope','getChartsData',func
 //BandWise Charts (Dashboard)
 app.controller('BandWiseController',['$scope','$rootScope','getChartsData',function($scope,$rootScope,getChartsData){
     
+    $scope.bands = ['Band-X','Band-1','Band-2','Band-3'];
+    $scope.selectedBand = '';
+    console.log($scope.selectedBand);
+    
+    //getting value of selected band
+    $scope.selectedBandValue = function(item){
+        $scope.selectedBand = item;
+    }
+//    getChartsData.getBandWiseData($rootScope.token, $scope.selectedBand).succes(function(data){
+//        
+//        
+//    });
 }]);
 
 
@@ -415,6 +409,7 @@ app.controller('NagpurStage',['$scope','$rootScope', 'getChartsData', function($
     });
     
 }]);    
+
 //Chennai Location
 app.controller('ChennaiStage',['$scope','$rootScope', 'getChartsData', function($scope, $rootScope, getChartsData){
     
@@ -458,7 +453,8 @@ app.controller('ChennaiStage',['$scope','$rootScope', 'getChartsData', function(
         });
         $scope.sixMonthsData.splice(0,1); // removing 6 hour value
     });
- }]);    
+ }]); 
+
     // bangalore location
     app.controller('BangaloreStage',['$scope','$rootScope', 'getChartsData', function($scope, $rootScope, getChartsData){
     
@@ -503,3 +499,5 @@ app.controller('ChennaiStage',['$scope','$rootScope', 'getChartsData', function(
         $scope.sixMonthsData.splice(0,1); // removing 6 hour value
     });
 }]);
+
+// *************************** bandWise page controllers ********************************
