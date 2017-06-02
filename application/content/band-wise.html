@@ -1,44 +1,151 @@
 <div class="main-text">
-    BAND WISE 
-</div>
-    <div class="box">
+        BAND WISE 
+</div>   
+    <div class="box" ng-controller="BandWiseController">
         <div class="box-heading">
             <center><b>INDIA</b></center>
         </div>
         <div class="box-content">
            <div class="chart-view">
-            <div class="barchart">
-             <canvas id="bar" class="chart chart-horizontal-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series"></canvas>
+             <div class="chart-select">
+            <ul class="chart-select-nav">
+                <li  ng-click="settabId(1)">6 Day's</li>
+                <li  ng-click="settabId(2)">6 Weeks</li>
+                <li class="last-tab" ng-click="settabId(3)">6 Months</li>
+            </ul>
+        </div>
+        <div class="chart-box">
+             <div class="band-box">
+                <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
+                    <option value="">Band-X</option>
+                </select>
+             </div>
+            <div class="chart-view-bandwise">
+               <div ng-if = "tab_val === 1 || tab_val === 0"> 
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+               </div>
+                <div  ng-if = "tab_val === 2">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div  ng-if = "tab_val === 3 ">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+            </div>
         </div>
         <div class="box-footer">
             <center><b><a href="" class="link">DETAILS ></a></b></center>
         </div>
     </div>
-    <div class="box">
+    <div class="box" ng-controller="NoidaStageBandWise">
         <div class="box-heading">
             <center><b>NOIDA</b></center>
         </div>
         <div class="box-content">
-            <div class="chart-view">
-            <div class="barchart">
-             <canvas id="bar" class="chart chart-horizontal-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series"></canvas>
+             <div class="chart-select">
+            <ul class="chart-select-nav">
+                <li  ng-click="settabId(1)">6 Day's</li>
+                <li  ng-click="settabId(2)">6 Weeks</li>
+                <li class="last-tab" ng-click="settabId(3)">6 Months</li>
+            </ul>
+        </div>
+        <div class="chart-box">
+             <div class="band-box">
+                <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
+                    <option value="">Band-X</option>
+                </select>
+             </div>
+            <div class="chart-view-bandwise">
+               <div ng-if = "tab_val === 1 || tab_val === 0"> 
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+               </div>
+                <div  ng-if = "tab_val === 2">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div  ng-if = "tab_val === 3 ">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </div>
         <div class="box-footer">
-            <center><b><a href="" class="link">DETAILS > </b></a></center>
+            <center><b><a href="" class="link">DETAILS > </a></b></center>
         </div>
     </div>
-    <div class="box">
+    <div class="box" ng-controller="GurgaonStageBandWise">
         <div class="box-heading">
             <center><b>GURGAON</b></center>
         </div>
         <div class="box-content">
-            <div class="chart-view">
-            <div class="barchart">
-             <canvas id="bar" class="chart chart-horizontal-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series"></canvas>
+             <div class="chart-select">
+            <ul class="chart-select-nav">
+                <li  ng-click="settabId(1)">6 Day's</li>
+                <li  ng-click="settabId(2)">6 Weeks</li>
+                <li class="last-tab" ng-click="settabId(3)">6 Months</li>
+            </ul>
+        </div>
+        <div class="chart-box">
+             <div class="band-box">
+                <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
+                    <option value="">Band-X</option>
+                </select>
+             </div>
+            <div class="chart-view-bandwise">
+               <div ng-if = "tab_val === 1 || tab_val === 0"> 
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+               </div>
+                <div  ng-if = "tab_val === 2">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div  ng-if = "tab_val === 3 ">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </div>
@@ -46,14 +153,49 @@
             <center><b><a href="" class="link">DETAILS > </a></b></center>
         </div>
     </div>
-    <div class="box">
+    <div class="box" ng-controller="NagpurStageBandWise">
         <div class="box-heading">
             <center><b>NAGPUR</b></center>
         </div>
         <div class="box-content">
-            <div class="chart-view">
-            <div class="barchart">
-             <canvas id="bar" class="chart chart-horizontal-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series"></canvas>
+             <div class="chart-select">
+            <ul class="chart-select-nav">
+                <li  ng-click="settabId(1)">6 Day's</li>
+                <li  ng-click="settabId(2)">6 Weeks</li>
+                <li class="last-tab" ng-click="settabId(3)">6 Months</li>
+            </ul>
+        </div>
+        <div class="chart-box">
+             <div class="band-box">
+                <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
+                    <option value="">Band-X</option>
+                </select>
+             </div>
+            <div class="chart-view-bandwise">
+               <div ng-if = "tab_val === 1 || tab_val === 0"> 
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+               </div>
+                <div  ng-if = "tab_val === 2">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div  ng-if = "tab_val === 3 ">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </div>
@@ -61,14 +203,49 @@
             <center><b><a href="" class="link">DETAILS > </a></b></center>
         </div>
     </div>
-    <div class="box">
+    <div class="box" ng-controller="ChennaiStageBandWise">
         <div class="box-heading">
             <center><b>CHENNAI</b></center>
         </div>
         <div class="box-content">
-            <div class="chart-view">
-            <div class="barchart">
-             <canvas id="bar" class="chart chart-horizontal-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series"></canvas>
+            <div class="chart-select">
+            <ul class="chart-select-nav">
+                <li  ng-click="settabId(1)">6 Day's</li>
+                <li  ng-click="settabId(2)">6 Weeks</li>
+                <li class="last-tab" ng-click="settabId(3)">6 Months</li>
+            </ul>
+        </div>
+        <div class="chart-box">
+             <div class="band-box">
+                <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
+                    <option value="">Band-X</option>
+                </select>
+             </div>
+            <div class="chart-view-bandwise">
+               <div ng-if = "tab_val === 1 || tab_val === 0"> 
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+               </div>
+                <div  ng-if = "tab_val === 2">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div  ng-if = "tab_val === 3 ">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </div>
@@ -76,14 +253,49 @@
             <center><b><a href="" class="link">DETAILS > </a></b></center>
         </div>
     </div>
-    <div class="box">
+    <div class="box" ng-controller="BangaloreStageBandWise">
         <div class="box-heading">
             <center><b>BANGALORE</b></center>
         </div>
         <div class="box-content">
-            <div class="chart-view">
-            <div class="barchart">
-             <canvas id="bar" class="chart chart-horizontal-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series"></canvas>
+             <div class="chart-select">
+            <ul class="chart-select-nav">
+                <li  ng-click="settabId(1)">6 Day's</li>
+                <li  ng-click="settabId(2)">6 Weeks</li>
+                <li class="last-tab" ng-click="settabId(3)">6 Months</li>
+            </ul>
+        </div>
+        <div class="chart-box">
+             <div class="band-box">
+                <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
+                    <option value="">Band-X</option>
+                </select>
+             </div>
+            <div class="chart-view-bandwise">
+               <div ng-if = "tab_val === 1 || tab_val === 0"> 
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+               </div>
+                <div  ng-if = "tab_val === 2">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div  ng-if = "tab_val === 3 ">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </div>

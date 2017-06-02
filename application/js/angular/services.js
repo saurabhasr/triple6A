@@ -44,7 +44,7 @@ app.factory('getChartsData',['$http', function($http){
                 method: 'GET',
                 url: 'ENDPOINTS.BASE_URL.concat()',
                 params:{
-                    Band : band
+                    band : band
                 },
                 headers:{
                     token: token  // authentication token and  
@@ -210,6 +210,82 @@ app.factory('getChartsData',['$http', function($http){
         
         // ************************ Getting Data for Band Wise Page ********************
         
+        // noida band data
+        getNoidaBandData :function(token, band){
+            var getNoidaBandData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/STAGEWISE'),
+                params: {
+                    location: 'Noida',
+                    band: band
+                },
+                 headers: {
+                    token: token
+                }
+            };
+            return $http(getNoidaBandData);
+        },
         
+        // gurgaon band data
+        getGurgaonBandData :function(token, band){
+            var getGurgaonBandData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/STAGEWISE'),
+                params: {
+                    location: 'Noida',
+                    band: band
+                },
+                 headers: {
+                    token: token
+                }
+            };
+            return $http(getGurgaonBandData);
+        },
+        
+        // Nagpur band data
+        getNagpurBandData :function(token, band){
+            var getNagpurBandData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/STAGEWISE'),
+                params: {
+                    location: 'Noida',
+                    band: band
+                },
+                 headers: {
+                    token: token
+                }
+            };
+            return $http(getNagpurBandData);
+        },
+        // gurgaon band data
+        getChennaiBandData :function(token, band){
+            var getChennaiBandData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/STAGEWISE'),
+                params: {
+                    location: 'Noida',
+                    band: band
+                },
+                 headers: {
+                    token: token
+                }
+            };
+            return $http(getChennaiBandData);
+        },
+        // gurgaon band data
+        getBangaloreBandData :function(token, band){
+            var getBangaloreBandData = {
+                method: 'GET',
+                url: ENDPOINTS.BASE_URL.concat('/stats/STAGEWISE'),
+                params: {
+                    location: 'Noida',
+                    band: band
+                },
+                 headers: {
+                    token: token
+                }
+            };
+            return $http(getBangaloreBandData);
+        },
     }
 }]);

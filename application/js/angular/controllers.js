@@ -22,7 +22,7 @@ app.controller('myCtrl',['$scope','$rootScope',function($scope,$rootScope){
                     }],
             },
         } ;
-    
+      
      $scope.value = 0;
      $scope.tab_val = 0;
      console.log($rootScope.token);
@@ -159,18 +159,49 @@ app.controller('StageWiseController',['$scope','$rootScope','getChartsData',func
 //BandWise Charts (Dashboard)
 app.controller('BandWiseController',['$scope','$rootScope','getChartsData',function($scope,$rootScope,getChartsData){
     
-    $scope.bands = ['Band-X','Band-1','Band-2','Band-3'];
-    $scope.selectedBand = '';
-    console.log($scope.selectedBand);
+    $scope.tab_val = 0;
+    $scope.settabId = function(selected_tab){
+        $scope.tab_val = selected_tab;
+    }
+    
+    $scope.bands = ['Band 1','Band 2','Band 3'];
+    $scope.selectedBand = 'Band X';
     
     //getting value of selected band
     $scope.selectedBandValue = function(item){
         $scope.selectedBand = item;
     }
-//    getChartsData.getBandWiseData($rootScope.token, $scope.selectedBand).succes(function(data){
-//        
-//        
-//    });
+   
+    
+    getChartsData.getBandWiseData($rootScope.token, $scope.selectedBand).success(function(data){
+        console.log("Data Done");
+        $scope.chartdata = data;
+        $scope.bandData = $scope.chartdata.stageScore;
+        $scope.labels = ['6Days', '6Weeks', '6Months' ];
+        
+         //variables of data for specific charts
+        $scope.sixDaysData = [];
+        $scope.sixWeeksData = [];
+        $scope.sixMonthsData = [];
+        
+        //getting data for 6 days
+        angular.forEach($scope.sixDays, function(key , value){
+            $scope.sixDaysData.push(key); 
+        });
+        $scope.sixDaysData.splice(0,1); // removing 6 hour value
+        
+        //getting data for 6 weeks
+        angular.forEach($scope.sixWeeks, function(key , value){
+           $scope.sixWeeksData.push(key);
+        });
+        $scope.sixWeeksData.splice(0,1); // removing 6 hour value
+        
+        //getting data from 6 months
+        angular.forEach($scope.sixMonths, function(key , value){
+           $scope.sixMonthsData.push(key);
+        });
+        $scope.sixMonthsData.splice(0,1); // removing 6 hour value
+    });
 }]);
 
 
@@ -297,7 +328,7 @@ app.controller('NoidaStage',['$scope','$rootScope', 'getChartsData', function($s
         $scope.sixDaysData = [];
         $scope.sixWeeksData = [];
         $scope.sixMonthsData = [];
-        
+        $scope.options = $rootScope.barChartOptions;
         
         //getting data for 6 days
         angular.forEach($scope.sixDays, function(key , value){
@@ -343,6 +374,7 @@ app.controller('GurgaonStage',['$scope','$rootScope', 'getChartsData', function(
         $scope.sixDaysData = [];
         $scope.sixWeeksData = [];
         $scope.sixMonthsData = [];
+        $scope.options = $rootScope.barChartOptions;
         
         //getting data for 6 days
         angular.forEach($scope.sixDays, function(key , value){
@@ -383,6 +415,7 @@ app.controller('NagpurStage',['$scope','$rootScope', 'getChartsData', function($
         
         //common labels for charts
         $scope.labels = ['RED', 'AMBER', 'GREEN' ];
+        $scope.options = $rootScope.barChartOptions;
         
         //variables of data for specific charts
         $scope.sixDaysData = [];
@@ -429,6 +462,7 @@ app.controller('ChennaiStage',['$scope','$rootScope', 'getChartsData', function(
         
         //common labels for charts
         $scope.labels = ['RED', 'AMBER', 'GREEN' ];
+        $scope.options = $rootScope.barChartOptions;
         
         //variables of data for specific charts
         $scope.sixDaysData = [];
@@ -463,10 +497,11 @@ app.controller('ChennaiStage',['$scope','$rootScope', 'getChartsData', function(
         $scope.tab_val = selected_tab;
     }
     
-    getChartsData.getBangaloreStageDataStageData($rootScope.token).success(function(data){
+    getChartsData.getBangaloreStageData($rootScope.token).success(function(data){
+       
        $scope.chartData = data;
        $scope.stageWiseData = $scope.chartData.stageScore;
-       
+      
         //getting data specific to timing
        $scope.sixDays = $scope.stageWiseData['6 Days'];
        $scope.sixWeeks = $scope.stageWiseData['6 Weeks'];
@@ -474,6 +509,7 @@ app.controller('ChennaiStage',['$scope','$rootScope', 'getChartsData', function(
         
         //common labels for charts
         $scope.labels = ['RED', 'AMBER', 'GREEN' ];
+        $scope.options = $rootScope.barChartOptions;
         
         //variables of data for specific charts
         $scope.sixDaysData = [];
@@ -501,3 +537,243 @@ app.controller('ChennaiStage',['$scope','$rootScope', 'getChartsData', function(
 }]);
 
 // *************************** bandWise page controllers ********************************
+
+// Noida band  Location
+app.controller('NoidaStageBandWise',['$scope','$rootScope','getChartsData', function($scope, $rootScope, getchartsData){
+    
+    $scope.tab_val = 0;
+    $scope.settabId = function(selected_tab){
+        $scope.tab_val = selected_tab;
+    }
+    
+    getchartsData.getNoidaBandData.success(function(data){
+        
+        $scope.chartData = data;
+        $scope.stageWiseData = $scope.chartData.stageScore;
+      
+        //getting data specific to timing
+       $scope.sixDays = $scope.stageWiseData['6 Days'];
+       $scope.sixWeeks = $scope.stageWiseData['6 Weeks'];
+       $scope.sixMonths = $scope.stageWiseData['6 Months'];
+        
+        //common labels for charts
+        $scope.labels = ['RED', 'AMBER', 'GREEN' ];
+        $scope.options = $rootScope.barChartOptions;
+        
+        //variables of data for specific charts
+        $scope.sixDaysData = [];
+        $scope.sixWeeksData = [];
+        $scope.sixMonthsData = [];
+        
+        //getting data for 6 days
+        angular.forEach($scope.sixDays, function(key , value){
+            $scope.sixDaysData.push(key); 
+        });
+        $scope.sixDaysData.splice(0,1); // removing 6 hour value
+        
+        //getting data for 6 weeks
+        angular.forEach($scope.sixWeeks, function(key , value){
+           $scope.sixWeeksData.push(key);
+        });
+        $scope.sixWeeksData.splice(0,1); // removing 6 hour value
+        
+        //getting data from 6 months
+        angular.forEach($scope.sixMonths, function(key , value){
+           $scope.sixMonthsData.push(key);
+        });
+        $scope.sixMonthsData.splice(0,1); // removing 6 hour value
+    });
+    
+}]);
+
+// gurgaon band data
+app.controller('GurgaonStageBandWise',['$scope','$rootScope','getChartsData', function($scope, $rootScope, getchartsData){
+    
+    $scope.tab_val = 0;
+    $scope.settabId = function(selected_tab){
+        $scope.tab_val = selected_tab;
+    }
+    
+    getchartsData.getGurgaonBandData.success(function(data){
+        
+        $scope.chartData = data;
+        $scope.stageWiseData = $scope.chartData.stageScore;
+      
+        //getting data specific to timing
+       $scope.sixDays = $scope.stageWiseData['6 Days'];
+       $scope.sixWeeks = $scope.stageWiseData['6 Weeks'];
+       $scope.sixMonths = $scope.stageWiseData['6 Months'];
+        
+        //common labels for charts
+        $scope.labels = ['RED', 'AMBER', 'GREEN' ];
+        $scope.options = $rootScope.barChartOptions;
+        
+        //variables of data for specific charts
+        $scope.sixDaysData = [];
+        $scope.sixWeeksData = [];
+        $scope.sixMonthsData = [];
+        
+        //getting data for 6 days
+        angular.forEach($scope.sixDays, function(key , value){
+            $scope.sixDaysData.push(key); 
+        });
+        $scope.sixDaysData.splice(0,1); // removing 6 hour value
+        
+        //getting data for 6 weeks
+        angular.forEach($scope.sixWeeks, function(key , value){
+           $scope.sixWeeksData.push(key);
+        });
+        $scope.sixWeeksData.splice(0,1); // removing 6 hour value
+        
+        //getting data from 6 months
+        angular.forEach($scope.sixMonths, function(key , value){
+           $scope.sixMonthsData.push(key);
+        });
+        $scope.sixMonthsData.splice(0,1); // removing 6 hour value
+    });
+    
+}]);
+
+//nagpur stage band data
+app.controller('NagpurStageBandWise',['$scope','$rootScope','getChartsData', function($scope, $rootScope, getchartsData){
+    
+    $scope.tab_val = 0;
+    $scope.settabId = function(selected_tab){
+        $scope.tab_val = selected_tab;
+    }
+    
+    getchartsData.getNagpurBandData.success(function(data){
+        
+        $scope.chartData = data;
+        $scope.stageWiseData = $scope.chartData.stageScore;
+      
+        //getting data specific to timing
+       $scope.sixDays = $scope.stageWiseData['6 Days'];
+       $scope.sixWeeks = $scope.stageWiseData['6 Weeks'];
+       $scope.sixMonths = $scope.stageWiseData['6 Months'];
+        
+        //common labels for charts
+        $scope.labels = ['RED', 'AMBER', 'GREEN' ];
+        $scope.options = $rootScope.barChartOptions;
+        
+        //variables of data for specific charts
+        $scope.sixDaysData = [];
+        $scope.sixWeeksData = [];
+        $scope.sixMonthsData = [];
+        
+        //getting data for 6 days
+        angular.forEach($scope.sixDays, function(key , value){
+            $scope.sixDaysData.push(key); 
+        });
+        $scope.sixDaysData.splice(0,1); // removing 6 hour value
+        
+        //getting data for 6 weeks
+        angular.forEach($scope.sixWeeks, function(key , value){
+           $scope.sixWeeksData.push(key);
+        });
+        $scope.sixWeeksData.splice(0,1); // removing 6 hour value
+        
+        //getting data from 6 months
+        angular.forEach($scope.sixMonths, function(key , value){
+           $scope.sixMonthsData.push(key);
+        });
+        $scope.sixMonthsData.splice(0,1); // removing 6 hour value
+    });
+    
+}]);
+
+// chennnai stage band data
+app.controller('ChennnaiStageBandWise',['$scope','$rootScope','getChartsData', function($scope, $rootScope, getchartsData){
+    
+    $scope.tab_val = 0;
+    $scope.settabId = function(selected_tab){
+        $scope.tab_val = selected_tab;
+    }
+    
+    getchartsData.getChennaiBandData.success(function(data){
+        
+        $scope.chartData = data;
+        $scope.stageWiseData = $scope.chartData.stageScore;
+      
+        //getting data specific to timing
+       $scope.sixDays = $scope.stageWiseData['6 Days'];
+       $scope.sixWeeks = $scope.stageWiseData['6 Weeks'];
+       $scope.sixMonths = $scope.stageWiseData['6 Months'];
+        
+        //common labels for charts
+        $scope.labels = ['RED', 'AMBER', 'GREEN' ];
+        $scope.options = $rootScope.barChartOptions;
+        
+        //variables of data for specific charts
+        $scope.sixDaysData = [];
+        $scope.sixWeeksData = [];
+        $scope.sixMonthsData = [];
+        
+        //getting data for 6 days
+        angular.forEach($scope.sixDays, function(key , value){
+            $scope.sixDaysData.push(key); 
+        });
+        $scope.sixDaysData.splice(0,1); // removing 6 hour value
+        
+        //getting data for 6 weeks
+        angular.forEach($scope.sixWeeks, function(key , value){
+           $scope.sixWeeksData.push(key);
+        });
+        $scope.sixWeeksData.splice(0,1); // removing 6 hour value
+        
+        //getting data from 6 months
+        angular.forEach($scope.sixMonths, function(key , value){
+           $scope.sixMonthsData.push(key);
+        });
+        $scope.sixMonthsData.splice(0,1); // removing 6 hour value
+    });
+    
+}]);
+
+//bangalore stage band data
+app.controller('BangaloreStageBandWise',['$scope','$rootScope','getChartsData', function($scope, $rootScope, getchartsData){
+    
+    $scope.tab_val = 0;
+    $scope.settabId = function(selected_tab){
+        $scope.tab_val = selected_tab;
+    }
+    
+    getchartsData.getBangaloreBandData.success(function(data){
+        
+        $scope.chartData = data;
+        $scope.stageWiseData = $scope.chartData.stageScore;
+      
+        //getting data specific to timing
+       $scope.sixDays = $scope.stageWiseData['6 Days'];
+       $scope.sixWeeks = $scope.stageWiseData['6 Weeks'];
+       $scope.sixMonths = $scope.stageWiseData['6 Months'];
+        
+        //common labels for charts
+        $scope.labels = ['RED', 'AMBER', 'GREEN' ];
+        $scope.options = $rootScope.barChartOptions;
+        
+        //variables of data for specific charts
+        $scope.sixDaysData = [];
+        $scope.sixWeeksData = [];
+        $scope.sixMonthsData = [];
+        
+        //getting data for 6 days
+        angular.forEach($scope.sixDays, function(key , value){
+            $scope.sixDaysData.push(key); 
+        });
+        $scope.sixDaysData.splice(0,1); // removing 6 hour value
+        
+        //getting data for 6 weeks
+        angular.forEach($scope.sixWeeks, function(key , value){
+           $scope.sixWeeksData.push(key);
+        });
+        $scope.sixWeeksData.splice(0,1); // removing 6 hour value
+        
+        //getting data from 6 months
+        angular.forEach($scope.sixMonths, function(key , value){
+           $scope.sixMonthsData.push(key);
+        });
+        $scope.sixMonthsData.splice(0,1); // removing 6 hour value
+    });
+    
+}]);
