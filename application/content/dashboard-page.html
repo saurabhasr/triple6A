@@ -1,8 +1,8 @@
-<div class="box">
+<div class="box" ng-controller="CompletionchartCtrl">
     <div class="box-heading">
         <center><b>COMPLETION</b></center>
     </div>
-    <div class="box-content">
+    <div class="box-content" >
         <div class="chart-view">
             <div class="barchart">
                 <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series"></canvas>
@@ -13,25 +13,24 @@
         <center><b><a href="" class="link">DETAILS ></a></b></center>
     </div>
 </div>
-<div class="box" ng-controller="dashboardController">
+<div class="box" ng-controller="StageWiseController">
     <div class="box-heading">
         <center><b>STAGE WISE</b></center>
     </div>
     <div class="box-content">
         <div class="chart-select">
-            <div class="chart-select-nav">
-                <div class="chart-select-nav-tab" id="tab" ng-click="settabId(1)">6 Day's</div>
-                <div class="chart-select-nav-tab" id="tab" ng-click="settabId(2)">6 Weeks</div>
-                <div class="chart-select-nav-tab lasttab" id="tab" ng-click="settabId(3)">6 Months</div>
-            </div>
+            <ul class="chart-select-nav">
+                <li  ng-click="settabId(1)">6 Day's</li>
+                <li  ng-click="settabId(2)">6 Weeks</li>
+                <li class="last-tab" ng-click="settabId(3)">6 Months</li>
+            </ul>
         </div>
         <div class="chart-box">
             <div class="chart-view">
                <div ng-if = "tab_val === 1 || tab_val === 0"> 
                     <div class="chart-view">
                         <div class="piechart">
-                            6 Day's
-                            <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" height="auto" width="auto">
+                            <canvas id="pie" class="chart chart-pie" chart-data="sixDaysData" chart-labels="labels" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -39,8 +38,7 @@
                 <div  ng-if = "tab_val === 2">
                     <div class="chart-view">
                         <div class="piechart">
-                            6 Weeks
-                            <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" height="auto" width="auto">
+                            <canvas id="pie" class="chart chart-pie" chart-data="sixWeeksData" chart-labels="labels" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -48,8 +46,7 @@
                 <div  ng-if = "tab_val === 3 ">
                     <div class="chart-view">
                         <div class="piechart">
-                            6 Months
-                            <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" height="auto" width="auto">
+                            <canvas id="pie" class="chart chart-pie" chart-data="sixMonthsData" chart-labels="labels" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -61,22 +58,57 @@
         <center><b><a href="" class="link">DETAILS ></a></b></center>
     </div>
 </div>
-<div class="box">
+<div class="box" ng-controller="BandWiseController">
     <div class="box-heading">
         <center><b>BAND WISE</b></center>
     </div>
     <div class="box-content">
-        <div class="chart-view barchart">
-             <canvas class="chart-horizontal-bar" chart-data="data" chart-options="options" chart-labels="labels" >
-            </canvas>
+        <div class="chart-select">
+            <ul class="chart-select-nav">
+                <li  ng-click="settabId(1)">6 Day's</li>
+                <li  ng-click="settabId(2)">6 Weeks</li>
+                <li class="last-tab" ng-click="settabId(3)">6 Months</li>
+            </ul>
         </div>
-        
+        <div class="chart-box">
+             <div class="band-box">
+                <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
+                    <option value="">Band-X</option>
+                </select>
+             </div>
+            <div class="chart-view-bandwise">
+               <div ng-if = "tab_val === 1 || tab_val === 0"> 
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+               </div>
+                <div  ng-if = "tab_val === 2">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div  ng-if = "tab_val === 3 ">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="box-footer">
         <center><b><a href="" class="link">DETAILS ></a></b></center>
     </div>
 </div>
-<div class="box box-col-2">
+<div class="box box-col-2" ng-controller="chartsCtrl">
     <div class="box-heading">
         <center><b>STAKEHOLDER</b></center>
     </div>
@@ -87,14 +119,44 @@
         <center><b><a href="" class="link">DETAILS ></a></b></center>
     </div>
 </div>
-<div class="box">
+<div class="box" ng-controller="StageWiseController">
     <div class="box-heading">
-        <center><b>% OF RAG</b></center>
+        <center><b>STAGE WISE</b></center>
     </div>
     <div class="box-content">
-        <div class="chart-view">
-            <div class="barchart">
-             <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-series="series"></canvas>
+        <div class="chart-select">
+            <ul class="chart-select-nav">
+                <li  ng-click="settabId(1)">6 Day's</li>
+                <li  ng-click="settabId(2)">6 Weeks</li>
+                <li class="last-tab" ng-click="settabId(3)">6 Months</li>
+            </ul>
+        </div>
+        <div class="chart-box">
+            <div class="chart-view">
+               <div ng-if = "tab_val === 1 || tab_val === 0"> 
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+               </div>
+                <div  ng-if = "tab_val === 2">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div  ng-if = "tab_val === 3 ">
+                    <div class="chart-view">
+                        <div class="piechart">
+                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -102,3 +164,4 @@
         <center><b><a href="" class="link">DETAILS ></a></b></center>
     </div>
 </div>
+

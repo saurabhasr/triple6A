@@ -1,7 +1,7 @@
 [
     {
         "chartType":"piechart",
-        "labels": ["6Days","6Weeks","6Months"],
+        "labels": ["6D","6W","6M"],
         "data":["70","55","25"]
     },
     {
