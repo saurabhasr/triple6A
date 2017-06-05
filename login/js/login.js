@@ -20,14 +20,14 @@ app.controller('myCtrl', ['$scope', '$rootScope','$http', 'AuthenticationService
         // calling Authentication Service
         AuthenticationService.validateLogin($scope.loginData)
             .success(function(response){
-                    $rootScope.userData = response;
-                    console.log(response);
-                    $rootScope.token = response.token;
-                    $rootScope.login = true;
-                    location.href = "../../application/content/index.html";
+                localStorage.token = response.token;
+                $rootScope.userData = response;
+                $rootScope.token = response.token;
+                $rootScope.login = true;
+                location.href = "../../application/content/index.html";
             }).error(function(error){
-                     $scope.login = false;
-                     sweetAlert("", "Invalid Username or Password", "error");
+                 $scope.login = false;
+                 sweetAlert("", "Invalid Username or Password", "error");
             });
             
     }
