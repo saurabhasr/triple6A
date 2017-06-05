@@ -16,15 +16,15 @@
         </div>
         <div class="chart-box">
              <div class="band-box">
-                <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
-                    <option value="">Band-X</option>
+                <select ng-model="selectedBand" ng-change ="selectedBandValue(selectedBand)" ng-options="x for x in bands">
+                    <option value="">Band X</option>
                 </select>
              </div>
             <div class="chart-view-bandwise">
                <div ng-if = "tab_val === 1 || tab_val === 0"> 
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                 <div  ng-if = "tab_val === 2">
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                 <div  ng-if = "tab_val === 3 ">
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -67,15 +67,15 @@
         </div>
         <div class="chart-box">
              <div class="band-box">
-                <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
-                    <option value="">Band-X</option>
+                <select ng-model="selectedBand" ng-change ="selectedBandValue(selectedBand)" ng-options="x for x in bands">
+                    <option value="">Band X</option>
                 </select>
              </div>
             <div class="chart-view-bandwise">
                <div ng-if = "tab_val === 1 || tab_val === 0"> 
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                 <div  ng-if = "tab_val === 2">
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                 <div  ng-if = "tab_val === 3 ">
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -117,15 +117,15 @@
         </div>
         <div class="chart-box">
              <div class="band-box">
-                <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
-                    <option value="">Band-X</option>
+                <select ng-model="selectedBand" ng-change ="selectedBandValue(selectedBand)" ng-options="x for x in bands">
+                    <option value="">Band X</option>
                 </select>
              </div>
             <div class="chart-view-bandwise">
                <div ng-if = "tab_val === 1 || tab_val === 0"> 
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -133,7 +133,7 @@
                 <div  ng-if = "tab_val === 2">
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -141,7 +141,7 @@
                 <div  ng-if = "tab_val === 3 ">
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -167,15 +167,15 @@
         </div>
         <div class="chart-box">
              <div class="band-box">
-                <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
-                    <option value="">Band-X</option>
+                <select ng-model="selectedBand" ng-change ="selectedBandValue(selectedBand)" ng-options="x for x in bands">
+                    <option value="">Band X</option>
                 </select>
              </div>
             <div class="chart-view-bandwise">
                <div ng-if = "tab_val === 1 || tab_val === 0"> 
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
                 <div  ng-if = "tab_val === 2">
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -191,7 +191,7 @@
                 <div  ng-if = "tab_val === 3 ">
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -217,15 +217,15 @@
         </div>
         <div class="chart-box">
              <div class="band-box">
-                <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
-                    <option value="">Band-X</option>
+                <select ng-model="selectedBand" ng-change ="selectedBandValue(selectedBand)" ng-options="x for x in bands">
+                    <option value="">Band X</option>
                 </select>
              </div>
             <div class="chart-view-bandwise">
                <div ng-if = "tab_val === 1 || tab_val === 0"> 
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -233,7 +233,7 @@
                 <div  ng-if = "tab_val === 2">
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -241,7 +241,7 @@
                 <div  ng-if = "tab_val === 3 ">
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -267,15 +267,15 @@
         </div>
         <div class="chart-box">
              <div class="band-box">
-                <select ng-model="$parent.selectedBand" ng-change ="selectedBandValue($parent.selectedBand)" ng-options="x for x in bands">
-                    <option value="">Band-X</option>
+                <select ng-model="selectedBand" ng-change ="selectedBandValue(selectedBand)" ng-options="x for x in bands">
+                    <option value="">Band X</option>
                 </select>
              </div>
             <div class="chart-view-bandwise">
                <div ng-if = "tab_val === 1 || tab_val === 0"> 
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas   id="bar" class="chart chart-horizontal-bar" chart-data="sixDaysData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -283,7 +283,7 @@
                 <div  ng-if = "tab_val === 2">
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixWeeksData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
@@ -291,7 +291,7 @@
                 <div  ng-if = "tab_val === 3 ">
                     <div class="chart-view">
                         <div class="piechart">
-                            <canvas id="bar" class="chart chart-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="ragOptions" height="auto" width="auto">
+                            <canvas  id="bar" class="chart chart-horizontal-bar" chart-data="sixMonthsData" chart-labels="labels" chart-options="options" height="auto" width="auto">
                             </canvas>
                         </div>
                     </div>
