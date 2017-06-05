@@ -546,8 +546,16 @@ app.controller('NoidaStageBandWise',['$scope','$rootScope','getChartsData', func
         $scope.tab_val = selected_tab;
     }
     
-    getchartsData.getNoidaBandData.success(function(data){
-        
+    $scope.bands = ['Band 1','Band 2','Band 3'];
+    $scope.selectedBand = 'Band X';
+    
+    //getting value of selected band
+    $scope.selectedBandValue = function(item){
+        $scope.selectedBand = item;
+    }
+    
+    getchartsData.getNoidaBandData($rootScope.token , $scope.selectedBand).success(function(data){
+        console.log("Noida"+$scope.selectedBand);
         $scope.chartData = data;
         $scope.stageWiseData = $scope.chartData.stageScore;
       
@@ -588,14 +596,21 @@ app.controller('NoidaStageBandWise',['$scope','$rootScope','getChartsData', func
 
 // gurgaon band data
 app.controller('GurgaonStageBandWise',['$scope','$rootScope','getChartsData', function($scope, $rootScope, getchartsData){
-    
     $scope.tab_val = 0;
     $scope.settabId = function(selected_tab){
         $scope.tab_val = selected_tab;
     }
     
-    getchartsData.getGurgaonBandData.success(function(data){
-        
+    $scope.bands = ['Band 1','Band 2','Band 3'];
+    $scope.selectedBand = 'Band X';
+    
+    //getting value of selected band
+    $scope.selectedBandValue = function(item){
+        $scope.selectedBand = item;
+    }
+    
+    getchartsData.getGurgaonBandData($rootScope.token , $scope.selectedBand).success(function(data){
+        console.log("2"+$scope.selectedBand);
         $scope.chartData = data;
         $scope.stageWiseData = $scope.chartData.stageScore;
       
@@ -641,8 +656,15 @@ app.controller('NagpurStageBandWise',['$scope','$rootScope','getChartsData', fun
     $scope.settabId = function(selected_tab){
         $scope.tab_val = selected_tab;
     }
+    $scope.bands = ['Band 1','Band 2','Band 3'];
+    $scope.selectedBand = 'Band X';
     
-    getchartsData.getNagpurBandData.success(function(data){
+    //getting value of selected band
+    $scope.selectedBandValue = function(item){
+        $scope.selectedBand = item;
+    }
+    
+    getchartsData.getNagpurBandData($rootScope.token , $scope.selectedBand).success(function(data){
         
         $scope.chartData = data;
         $scope.stageWiseData = $scope.chartData.stageScore;
@@ -683,14 +705,22 @@ app.controller('NagpurStageBandWise',['$scope','$rootScope','getChartsData', fun
 }]);
 
 // chennnai stage band data
-app.controller('ChennnaiStageBandWise',['$scope','$rootScope','getChartsData', function($scope, $rootScope, getchartsData){
+app.controller('ChennaiStageBandWise',['$scope','$rootScope','getChartsData', function($scope, $rootScope, getchartsData){
     
     $scope.tab_val = 0;
     $scope.settabId = function(selected_tab){
         $scope.tab_val = selected_tab;
     }
     
-    getchartsData.getChennaiBandData.success(function(data){
+    $scope.bands = ['Band 1','Band 2','Band 3'];
+    $scope.selectedBand = 'Band X';
+    
+    //getting value of selected band
+    $scope.selectedBandValue = function(item){
+        $scope.selectedBand = item;
+    }
+    
+    getchartsData.getChennaiBandData($rootScope.token , $scope.selectedBand).success(function(data){
         
         $scope.chartData = data;
         $scope.stageWiseData = $scope.chartData.stageScore;
@@ -737,8 +767,15 @@ app.controller('BangaloreStageBandWise',['$scope','$rootScope','getChartsData', 
     $scope.settabId = function(selected_tab){
         $scope.tab_val = selected_tab;
     }
+    $scope.bands = ['Band 1','Band 2','Band 3'];
+    $scope.selectedBand = 'Band X';
     
-    getchartsData.getBangaloreBandData.success(function(data){
+    //getting value of selected band
+    $scope.selectedBandValue = function(item){
+        $scope.selectedBand = item;
+    }
+    
+    getchartsData.getBangaloreBandData($rootScope.token , $scope.selectedBand).success(function(data){
         
         $scope.chartData = data;
         $scope.stageWiseData = $scope.chartData.stageScore;
