@@ -1,22 +1,8 @@
-Skip to content
-Features Business Explore Marketplace Pricing
-This repository
-Search
-Sign in or Sign up
- Watch 0  Star 0  Fork 1 gangwar2558/triple6A
-forked from saurabhasr/triple6A
- Code  Pull requests 0  Projects 0 Insights 
-Branch: dev Find file Copy pathtriple6A/application/css/myStyle.css
-fd68040  3 days ago
- Abhishek Gangwar BandWise ang Rag status page Added
-2 contributors @saurabhasr @sikka726
-RawBlameHistory     
-402 lines (376 sloc)  5.87 KB
-body {
-    width:100%;
-    height:100%;
+body{
+    overflow-x:hidden;
+    overflow-y:hidden;
     font-family: 'Fira Sans', sans-serif;
- }
+}
 
 /* Toggle Styles */
 
@@ -36,12 +22,16 @@ body {
     z-index: 1000;
     position: fixed;
     left: 250px;
-    padding-left:0px;
-    width: 60px;
+    width: 5%;
     height: 100%;
     margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -49,12 +39,16 @@ body {
 }
 
 #page-content-wrapper {
-    position: absolute;
+    width: 100%;
+    position: relative;
+    margin-left:1%;
 }
 
 #wrapper.toggled #page-content-wrapper {
-    position: absolute;
+    position: relative;
     margin-right: -250px;
+    width:100%;
+    margin-left:0;
 }
 
 /* Sidebar Styles */
@@ -67,10 +61,11 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
+    background-color:#ff6400;
 }
 
 .sidebar-nav li {
-    text-indent: 20px;
+    text-indent: 40px;
     line-height: 40px;
     
 }
@@ -79,7 +74,8 @@ body {
     display: block;
     text-decoration: none;
     color: white;
-    padding-bottom: 20px;
+    padding-bottom: 6%;
+    padding-top: 6%;
 }
 
 .sidebar-nav li a:hover {
@@ -95,8 +91,7 @@ body {
 }
 
 .sidebar-nav > .sidebar-brand {
-    height: 80px;
-    padding-bottom: 20px;
+    padding-bottom: 5%;
     line-height: inherit;
 }
 
@@ -112,28 +107,28 @@ body {
 
 .icon
 {
-    padding-left: 20px;
-    padding-top:15px;
+    padding-left: 13%;
+    padding-top:5%;
 }
 .glicon
 {
-    padding-left:10px;
+    padding-left: 1.5%;
     padding-bottom: 5px;
 }
 .mainicon
 {
-    padding-left:15px;
-    padding-top:5px;
+    padding-left:11%;
+   
 }
 .nav-content
 {
     padding-top:15px !important;
-    margin-left: 10px;
+    margin-left: 7%;
 }
 .small-text
 {
     font-size:10px;
-    margin-left: 25px;
+    margin-left: 40px;
     color:white;
 }
 .large-text
@@ -141,7 +136,7 @@ body {
     font-size:15px;
     font-weight:700;
     color: white;
-    margin-top:25px;
+    margin-top:5%;
 }
 .main-text
 {
@@ -246,7 +241,7 @@ input
     position: relative;
     height: 40%; 
     border: 1px solid #e6ecf1;
-    margin:15px;
+    margin:2%;
     background-color: white;
     border-radius: 5px;
 }
@@ -281,7 +276,7 @@ input
 }
 .box-col-2
 {
-   width: 60.7% !important;
+   width: 62% !important;
 }
 .link
 {
@@ -304,7 +299,7 @@ input
 }
 .chart-select-nav li
 {
-    height: 40px; 
+    height: 20%; 
     padding-left:10px;
     padding-top:10px;
     font-weight: 700 !important;
@@ -358,60 +353,7 @@ input
 {
     height:100%;
     width:100%;
-    padding:15px;
+    padding:3%;
     background-color:#f7f8f9;
 }
 
-@media(min-width:768px) {
-    
-    #wrapper {
-        padding-left: 0;
-    }
-    #wrapper.toggled {
-        width: 60px;
-        padding-left: 250px;
-    }
-
-    #sidebar-wrapper {
-        width: 60px;
-        background-color: #ff6400;
-    }
-
-    #wrapper.toggled #sidebar-wrapper {
-        width: 250px;
-    }
-    #page-content
-    {
-        position:absolute;
-    }
-    #page-content-wrapper {
-        position: relative;
-        width:100%;
-        padding-left:60px;
-    }
-    #wrapper.toggled #page-content-wrapper {
-        position: absolute !important;
-        padding-left:0px;
-        overflow-x: hidden;
-        background-color:#f7f8f9;
-        height:100%;
-        width:100%;
-        margin-right: 0;
-    }
-}
-
-@media(min-width:1368px)
-{
-    .maincontainer{
-        padding:30px;
-    }
-    .box{
-        margin:30px;
-    }
-    .box-col-2
-    {
-        width: 62% !important;
-    }
-}
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help
