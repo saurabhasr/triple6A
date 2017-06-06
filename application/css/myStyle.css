@@ -7,7 +7,7 @@ body{
 /* Toggle Styles */
 
 #wrapper {
-    padding-left: 60px;
+    padding-left: 2%;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -22,7 +22,7 @@ body{
     z-index: 1000;
     position: fixed;
     left: 250px;
-    width: 5%;
+    width: 3%;
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
@@ -50,7 +50,11 @@ body{
     width:100%;
     margin-left:0;
 }
-
+select
+{
+        width: 25%;
+    border: 1px solid black;
+}
 /* Sidebar Styles */
 
 .sidebar-nav {
@@ -65,7 +69,6 @@ body{
 }
 
 .sidebar-nav li {
-    text-indent: 40px;
     line-height: 40px;
     
 }
@@ -76,6 +79,12 @@ body{
     color: white;
     padding-bottom: 6%;
     padding-top: 6%;
+    border-bottom: 1px solid #f77e3d;
+}
+
+.border-top
+{
+ border-top: 1px solid #f77e3d;
 }
 
 .sidebar-nav li a:hover {
@@ -107,17 +116,17 @@ body{
 
 .icon
 {
-    padding-left: 13%;
+    padding-left: 6%;
     padding-top:5%;
 }
 .glicon
 {
-    padding-left: 1.5%;
+    padding-left: .3%;
     padding-bottom: 5px;
 }
 .mainicon
 {
-    padding-left:11%;
+    padding-left:4%;
    
 }
 .nav-content
@@ -128,7 +137,7 @@ body{
 .small-text
 {
     font-size:10px;
-    margin-left: 40px;
+    margin-left: 10px;
     color:white;
 }
 .large-text
@@ -137,14 +146,13 @@ body{
     font-weight:700;
     color: white;
     margin-top:5%;
+    text-indent: 10px;
 }
 .main-text
 {
     font-size:20px;
     color:#ff6400;
     margin-left:30px;
-    width: 80%;
-    float:left;
     height: 20px;
 }
 .band-box
@@ -174,7 +182,7 @@ body{
     height: 100%;
     float:left;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 18px;
 }
 .searchbox
 {
@@ -203,7 +211,7 @@ input
     height:100%;
     float:left;
     text-align: center;
-    padding-top:3px;
+    padding-top:7px;
 }
 .img-circle {
     border-radius: 50%;
@@ -223,7 +231,7 @@ input
     border-right:1px solid #e6ecf1;
     float:left;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 18px;
 }
 .logout
 {
@@ -237,11 +245,11 @@ input
 .box
 {
     float: left;
-    width: 29%;
+    width: 31%;
     position: relative;
-    height: 40%; 
+    height: 43%; 
     border: 1px solid #e6ecf1;
-    margin:2%;
+    margin:1%;
     background-color: white;
     border-radius: 5px;
 }
@@ -276,7 +284,7 @@ input
 }
 .box-col-2
 {
-   width: 62% !important;
+   width: 64% !important;
 }
 .link
 {
@@ -353,7 +361,7 @@ input
 {
     height:100%;
     width:100%;
-    padding:3%;
+    padding:1%;
     background-color:#f7f8f9;
 }
 

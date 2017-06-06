@@ -21,6 +21,7 @@ app.controller('myCtrl', ['$scope', '$rootScope','$http', 'AuthenticationService
         AuthenticationService.validateLogin($scope.loginData)
             .success(function(response){
                     $rootScope.userData = response;
+                    console.log($rootScope.userData);
                     console.log(response);
                     $rootScope.token = response.token;
                     $rootScope.login = true;

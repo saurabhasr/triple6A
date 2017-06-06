@@ -41,7 +41,7 @@ app.config(['ChartJsProvider', function (ChartJsProvider) {
     
     // Configure all charts
     ChartJsProvider.setOptions({
-      chartColors: ['#f20c2a', '#f1cf0b','#12cc46'],
+      chartColors: ['#fe0000', '#ffde00','#05c001'],
       responsive: true
     });
     
@@ -61,19 +61,6 @@ app.controller('detailedController',function($scope){
  
 });
 
-
-app.controller('chartsCtrl', ['$scope','$rootScope','getChartData', function($scope, $rootScope, getChartData){
-    
-    //calling completion serivce 
-    getChartData.getInfo().success(function(data){
-        $scope.chartData = data[1];
-        $scope.labels = $scope.chartData.labels;
-        $scope.data = $scope.chartData.data;
-        
-        $scope.options = $rootScope.barChartOptions;    
-
-    });
-}]);
 
 // Completion Chart Dashboard
 app.controller('CompletionchartCtrl', ['$scope','$rootScope','getChartsData', function($scope, $rootScope, getChartsData){
